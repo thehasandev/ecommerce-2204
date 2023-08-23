@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import PrevSlide from './components/PrevSlide'
 import NextSlide from "./components/NextSlide"
+import DropDown from './components/DropDown'
 
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
   return (
     <>
   
-  <Slider {...settings}>
+  <DropDown/>
+  {/* <Slider {...settings}>
 
    <div className='w-80'>
     <Product/> 
@@ -57,7 +59,7 @@ function App() {
     <Product/> 
    </div>
 
-  </Slider>
+  </Slider> */}
 
     
 {/* 
