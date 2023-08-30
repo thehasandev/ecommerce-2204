@@ -14,6 +14,7 @@ import Slider from "react-slick";
 import PrevSlide from './components/PrevSlide'
 import NextSlide from "./components/NextSlide"
 import DropDown from './components/DropDown'
+import Input from './components/Input'
 
 
 function App() {
@@ -31,8 +32,11 @@ function App() {
 
   return (
     <>
-  
-  <DropDown/>
+    <div className='m-10'>
+     <Input placeholder="Enter your name" text="Name *" type="text"/>
+     <Input placeholder="Enter your email" text="Email" type="password"/>
+    </div>
+   
   {/* <Slider {...settings}>
 
    <div className='w-80'>

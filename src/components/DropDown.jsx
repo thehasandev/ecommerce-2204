@@ -7,12 +7,12 @@ function DropDown() {
     let dropRef = useRef(null)
 
     let handleDrop =(e)=>{
+
      if(e.target.className == "btnDrop"){
       if(dropRef.current.style.display=="none"){
             dropRef.current.style.display="block"
         }else{
-            if(!dropRef.current.contains(e.target)){
-                
+            if(!dropRef.current.contains(e.target)){     
             dropRef.current.style.display="none"
             }
         }
