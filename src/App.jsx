@@ -1,109 +1,23 @@
 import React from 'react'
 
-import Flex from './components/Flex'
-import List from './components/List'
-import SubHeading from './components/SubHeading'
-import PortionHeading from './components/PortionHeading'
-import Image from './components/Image'
-import Logo from "./assets/logo.png"
-import Facility from './components/Facility'
-import Button from './components/Button'
-import Product from './Product'
-import "slick-carousel/slick/slick.css"; 
-import Slider from "react-slick";
-import PrevSlide from './components/PrevSlide'
-import NextSlide from "./components/NextSlide"
-import DropDown from './components/DropDown'
-import Input from './components/Input'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import Home from './Pages/Home'
+import Error from './Pages/Error'
+import Navbar from './components/layouts/Navbar'
+import Footer from './components/layouts/Footer'
 
 function App() {
-
-  const settings = {
-
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    prevArrow: <PrevSlide />,
-    nextArrow: <NextSlide />,
-
-  }
-
   return (
     <>
-    <div className='m-10'>
-     <Input placeholder="Enter your name" text="Name *" type="text"/>
-     <Input placeholder="Enter your email" text="Email" type="password"/>
-    </div>
-   
-  {/* <Slider {...settings}>
-
-   <div className='w-80'>
-    <Product/> 
-   </div>
- 
-   <div className='w-80'>
-    <Product/> 
-   </div>
- 
-   <div className='w-80'>
-    <Product/> 
-   </div>
- 
-   <div className='w-80'>
-    <Product/> 
-   </div>
- 
-   <div className='w-80'>
-    <Product/> 
-   </div>
- 
-   <div className='w-80'>
-    <Product/> 
-   </div>
-
-  </Slider> */}
-
-    
-{/* 
-
-<Button text="Shop Now " hover/>
-<Button text="Add to Wish List " /> 
-
-*/}
-
-
-
-{/* <Facility/> */}
-
-{/* <Image src={Logo} alt="logo" /> */}
-
-
-
-{/* <PortionHeading text=" Portion Heading " className= "text-base"/>  */}
-
-
-
-
-{/* <SubHeading text = "Sub Heading" className="text-text39"/>  */}
-
-
-
- {/* 
-  <List text="Menu" />
-  <List text="Home" />
-  <List text="City"/> 
-*/}
-
-
-{/*
-<Flex className="justify-between">
-   <h1>Hasan</h1>
-   <h1>Hasan</h1>
-</Flex>
-
-*/}
+      <BrowserRouter>
+        <Navbar/>
+         <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='*' element={<Error/>}/>
+         </Routes>
+        <Footer/> 
+      </BrowserRouter>
     </>
   )
 }
