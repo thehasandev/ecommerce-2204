@@ -14,7 +14,7 @@ import Search from '../Search'
 
 function Searchbar() {
   return (
-    <Section className="bg-ash py-6">
+    <Section className="bg-ash py-6 mb-36">
         <Container>
             <Flex className="justify-between items-center">
                 <Flex className='w-1/5 gap-x-2.5 items-center'>

@@ -14,7 +14,7 @@ import {BsInstagram} from "react-icons/bs"
 
 function Footer() {
   return (
-    <footer className='bg-ash py-14'>
+    <footer className='bg-ash py-14 mt-32'>
        <Container>
            <Flex>
 
