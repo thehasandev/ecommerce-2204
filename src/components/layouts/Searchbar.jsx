@@ -9,12 +9,20 @@ import {BiSolidUser} from "react-icons/bi"
 import {AiFillCaretDown} from "react-icons/ai"
 import {BsCartFill} from "react-icons/bs"
 import Search from '../Search'
+import { Link } from 'react-router-dom'
 
-
+import { useDispatch } from 'react-redux'
+import { bradcrumb } from '../../slices/bratcrumbSlice'
 
 function Searchbar() {
+  let dispatch  = useDispatch()
+  
+  let handleNameClick=(name)=>{
+    dispatch(bradcrumb(name))
+  }
+
   return (
-    <Section className="bg-ash py-6 mb-36">
+    <Section className="bg-ash py-6 mb-124">
         <Container>
             <Flex className="justify-between items-center">
                 <Flex className='w-1/5 gap-x-2.5 items-center'>
@@ -27,7 +35,10 @@ function Searchbar() {
 
                 <Flex className='w-1/5 gap-x-10 justify-end'>
                     <Flex>
-                    <BiSolidUser/>
+                      <Link to="/sing-up" onClick={()=>{handleNameClick("Sing up")}}>
+                         <BiSolidUser/>
+                      </Link>
+                    
                     <AiFillCaretDown/>
                     </Flex>
                     <BsCartFill/>

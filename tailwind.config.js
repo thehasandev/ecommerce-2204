@@ -12,7 +12,7 @@ export default {
       fontSize: {
         'text25': '25px',
         'text39': '39px',
-        'text49': '49px',
+        'text49': '49px'
       },
       colors: {
         'primary': '#262626',
@@ -24,6 +24,15 @@ export default {
       maxWidth: {
         'container': '1604px',
         '664': '644px',
+      },
+      spacing: {
+        '124': '124px',
+        '127': '127px',
+        '57': '57px',
+      },
+      width:{
+          48: '48%',
+        664 : '644px'
       }
     },
   },

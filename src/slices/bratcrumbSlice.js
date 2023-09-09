@@ -1,18 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 
 export const bratcrumbSlice = createSlice({
   name: 'counter',
   initialState: {
-    currnetPage: "",
+    currentName: "",
+    previusName:""
   },
   reducers: {
-    bradcrumb: (state) => {
-
+    bradcrumb: (state,action) => {     
+           state.previusName = state.currentName                   
+           state.currentName = action.payload
     },
    
   },
 })
 
-export const { currnetPage } = bratcrumbSlice.actions
+export const { bradcrumb } = bratcrumbSlice.actions
 
 export default bratcrumbSlice.reducer

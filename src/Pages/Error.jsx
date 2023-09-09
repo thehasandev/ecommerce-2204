@@ -20,7 +20,7 @@ function Error() {
                <Search className="border border-secondary" placeholder="Type to search"/>
                
                <Link to="/">
-               <Button text="Back to Home" hover/>
+               <Button text="Back to Home" hover className="mt-10"/>
                </Link>
 
                </div>

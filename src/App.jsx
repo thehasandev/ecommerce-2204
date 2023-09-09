@@ -10,13 +10,22 @@ import Home from "./Pages/Home"
 import Error from "./Pages/Error"
 import RouteLayouts from './components/RouteLayouts';
 import Singup from './Pages/Singup';
+import ProductShop from './Pages/ProductShop';
+import Login from './Pages/Login';
+import Contacts from './Pages/Contacts';
+import Checkout from './Pages/Checkout';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
 
     <Route path='/' element={<RouteLayouts/>}>
       <Route path='/' element = {<Home/>}/>
+      <Route path='/login' element = {<Login/>}/>
       <Route path='/sing-up' element = {<Singup/>}/>
+      <Route path='/shop' element = {<ProductShop/>}/> 
+      <Route path='/checkout' element = {<Checkout/>}/> 
+      <Route path='/contact' element = {<Contacts/>}/> 
       <Route path='*' element = {<Error/>}/>
     </Route>
   )

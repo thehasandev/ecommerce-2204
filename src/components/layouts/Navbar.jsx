@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import Container from '../Container'
 import Flex from '../Flex'
 import Image from "../Image"
@@ -7,9 +9,19 @@ import List from "../List"
 import Searchbar from "../layouts/Searchbar"
 
 import Logo from "../../assets/logo.png"
-import { Link } from 'react-router-dom'
+
+import { useDispatch } from 'react-redux'
+import { bradcrumb } from '../../slices/bratcrumbSlice'
+
+
 
 function Navbar() {
+ let dispatch  = useDispatch()
+
+let handleNameClick = (name)=>{
+   dispatch(bradcrumb(name))
+}
+
   return (
     <>
     <nav className='py-8'>
@@ -22,12 +34,20 @@ function Navbar() {
                  
                  <Flex className='w-4/5 justify-end'>
                     <ul className='flex gap-x-10'>
-                      <Link to="/">
-                        <List text="Home"/>
+                     
+                      <Link onClick={()=>{handleNameClick("Home")}} to="/">
+                         <List text="Home"/>
                       </Link>
-                        <List text="Shop"/>
+
+                      <Link onClick={()=>{handleNameClick("Shop")}} to="/shop">
+                         <List text="Shop"/>
+                      </Link>
+                     
                         <List text="About"/>
-                        <List text="Contacts"/>
+                    
+                       <Link onClick={()=>{handleNameClick("Contact")}} to="/contact">
+                         <List text="Contacts"/>
+                       </Link>
                         <List text="Journal"/>
                     </ul>
                  </Flex>
