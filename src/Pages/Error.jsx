@@ -35,5 +35,3 @@ export default Error
 
 
 
-//This is comment
-//this is comment two

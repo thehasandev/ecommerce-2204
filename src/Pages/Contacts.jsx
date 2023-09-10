@@ -21,7 +21,7 @@ function Contacts() {
             <Flex className="items-center gap-x-2">
               <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
       
-                <Link to={pageName=="Home" ? "/"  : `/${pageName}`}>
+                <Link to={pageName=="Home" ? "/"  : pageName == "Sing up"? "/sing-up" : `/${pageName}`}>
                   {pageName}
                 </Link>
                 

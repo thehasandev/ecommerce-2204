@@ -9,21 +9,28 @@ import Button from "../components/Button"
 
 import {AiOutlineRight} from "react-icons/ai"
 
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { bradcrumb } from "../../src/slices/bratcrumbSlice"
 import { Link } from 'react-router-dom'
 
 function Singup() {
-  let pageName =useSelector((state)=>state.bractcumb.previusName)
-  
+let pageName =useSelector((state)=>state.bractcumb.previusName)
 let [divitonData,setDivitionData] = useState("")
-
-
 
 let handleDivitionChange=(e)=>{
   if(e.target.value !="Please select"){
     setDivitionData(e.target.value)
   }
 }
+
+let dispatch = useDispatch()
+
+let handleNameClick=(name)=>{
+   dispatch(bradcrumb(name))
+}
+
+
+
 
   return (
     <div>
@@ -154,7 +161,7 @@ let handleDivitionChange=(e)=>{
               
             </Flex>
            
-           <Link to="/login">
+           <Link onClick={()=>{handleNameClick("Sing up")}} to="/login">
               <Button text="Login" className="px-28 mt-10" hover/>
            </Link>
 

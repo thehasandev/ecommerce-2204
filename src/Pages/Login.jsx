@@ -7,16 +7,19 @@ import Flex from '../components/Flex'
 import Input from '../components/Input'
 import { useSelector } from 'react-redux'
 import Button from '../components/Button'
+import { Link } from 'react-router-dom'
 
 function Login() {
-    let pageName =useSelector((state)=>state.bractcumb.previusName)
+    let pageName = useSelector((state)=>state.bractcumb.previusName)
   return (
     <div>
         <Container>
         <SubHeading text="Login" className="mb-2"/>
         <Flex className="items-center gap-x-2">
               <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
-                  {pageName} 
+                 <Link to={pageName == "Home" ? "/" : pageName =="Sing up" ? "/sing-up" : `/${pageName}`}>
+                    {pageName} 
+                 </Link>
                 <AiOutlineRight/>
               </p>
               <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase'>{window.location.pathname.replace("/"," ")}</p>
@@ -24,7 +27,6 @@ function Login() {
             
         <p className='font-dm font-normal text-gray w-664 mt-127 mb-57 text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
         
-        {/* Problem */}
         <SubHeading text="Returning Customer" className="text-text39 mb-11 "/>
            <Flex className="justify-between flex-wrap gap-y-6">
                 <div className='w-48'>
