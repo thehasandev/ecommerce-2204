@@ -42,8 +42,10 @@ let handleNameClick = (name)=>{
                       <Link onClick={()=>{handleNameClick("Shop")}} to="/shop">
                          <List text="Shop"/>
                       </Link>
-                     
+                      
+                      <Link onClick={()=>{handleNameClick("About")}} to="/about">
                         <List text="About"/>
+                      </Link>
                     
                        <Link onClick={()=>{handleNameClick("Contact")}} to="/contact">
                          <List text="Contacts"/>

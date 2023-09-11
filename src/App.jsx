@@ -14,6 +14,7 @@ import ProductShop from './Pages/ProductShop';
 import Login from './Pages/Login';
 import Contacts from './Pages/Contacts';
 import Checkout from './Pages/Checkout';
+import About from './Pages/About';
 
 
 const router = createBrowserRouter(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path='/shop' element = {<ProductShop/>}/> 
       <Route path='/checkout' element = {<Checkout/>}/> 
       <Route path='/contact' element = {<Contacts/>}/> 
+      <Route path='/about' element = {<About/>}/> 
       <Route path='*' element = {<Error/>}/>
     </Route>
   )
