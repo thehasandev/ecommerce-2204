@@ -6,7 +6,7 @@ import {AiOutlineRight} from "react-icons/ai"
 import {Link} from "react-router-dom"
 
 import { useSelector } from 'react-redux'
-import Product from '../Product'
+import Product from '../components/Product'
 
 
 function ProductShop() {

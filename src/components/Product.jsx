@@ -1,12 +1,12 @@
 import React from 'react'
-import Image from './components/Image'
-import Product1 from "./assets/product1.png"
-import Badge from './components/Badge'
-import Flex from './components/Flex'
-import PortionHeading from './components/PortionHeading'
+import Image from '../components/Image'
+import Product1 from "../assets/product1.png"
+import Badge from '../components/Badge'
+import Flex from '../components/Flex'
+import PortionHeading from '../components/PortionHeading'
 import { AiFillHeart } from 'react-icons/ai';
-import IconCompare from './components/Icon/IconCompare'
-import IconAddCard from './components/Icon/IconAddCard'
+import IconCompare from '../components/Icon/IconCompare'
+import IconAddCard from '../components/Icon/IconAddCard'
 
 function Product() {
   return (
