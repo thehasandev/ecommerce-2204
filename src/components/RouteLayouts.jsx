@@ -6,11 +6,11 @@ import { Outlet } from 'react-router-dom'
 
 function RouteLayouts() {
   return (
-    <div>
+    <section>
         <Navbar/>
          <Outlet/>
         <Footer/>
-    </div>
+    </section>
   )
 }
 

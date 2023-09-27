@@ -8,7 +8,26 @@ import { AiFillHeart } from 'react-icons/ai';
 import IconCompare from '../components/Icon/IconCompare'
 import IconAddCard from '../components/Icon/IconAddCard'
 
-function Product() {
+import { useDispatch } from 'react-redux'
+import { addTocard } from '../slices/cardSlice'
+
+
+function Product({productName,price}) {
+ let dispath = useDispatch()
+
+  let handleClick =()=>{
+     dispath(addTocard(
+      {
+
+       title : productName,
+       price      :price,
+       imgUrl: Product1,
+       quantity    :1
+
+      }
+  ))
+  }
+
   return (
     <div className='mx-5'>
     <div className='relative group overflow-hidden '>
@@ -25,17 +44,17 @@ function Product() {
               <IconCompare/> 
             </Flex>
 
-            <Flex className="justify-end items-center gap-x-4">
+            <div onClick={handleClick} className="flex justify-end items-center gap-x-4 cursor-pointer">    
               <p className='text-sm font-dm font-bold text-primary'>Add to Cart</p>
               <IconAddCard />
-            </Flex>
+            </div>
         </div>
        
     </div>
 
     <Flex className="justify-between items-center mt-4">
-           <PortionHeading text="Basic Crew Neck Tee"/>
-           <p className='font-dm font-normal text-base text-gray'>$44.00</p>
+           <PortionHeading text={productName}/>
+           <p className='font-dm font-normal text-base text-gray'>{price}</p>
     </Flex>
 
     </div>

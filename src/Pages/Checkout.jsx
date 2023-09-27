@@ -110,7 +110,6 @@ function Checkout() {
              <SubHeading text="Your Order" className="text-text39 mt-32 mb-12"/>
             
              <table>
-
                 <thead>
                     <tr>
                         <th className='border border-gray font-dm font-bold text-base text-primary py-4 px-32'>Product</th>

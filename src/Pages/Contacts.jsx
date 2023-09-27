@@ -14,7 +14,7 @@ import {AiOutlineRight} from "react-icons/ai"
 import { useSelector } from 'react-redux'
 
 function Contacts() {
-    let pageName =useSelector((state)=>state.bractcumb.previusName)
+    let pageName = useSelector((state)=>state.bractcumb.previusName)
   return (
     <Container>
            <SubHeading text="Contacts" className="mb-2"/>
