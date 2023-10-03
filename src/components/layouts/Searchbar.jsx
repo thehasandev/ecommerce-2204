@@ -53,7 +53,7 @@ function Searchbar() {
                     </Flex>
                        
                        <div className='relative'>
-                        <BsCartFill onClick={()=>{setOpen(true)}}/>
+                        <BsCartFill onClick={()=>{setOpen(true)}} className='cursor-pointer'/>
                         
                         <div className='absolute top-[-13px] left-[15px]   text-xl font-dm font-bold text-primary '>
                           {cartData.card.length}
@@ -96,22 +96,21 @@ function Searchbar() {
                           </Flex>
 
                         )
-                          
-                        
-                          
+                             
                         )
                       }
                     
 
-                        <div>
+                        <div onClick={()=>setOpen(false)}>
                           <Link to="/checkout">
                              <Button text="CHECK OUT NOW" hover className="w-full my-5 rounded-[5px]"/>
                           </Link>
                         </div>
-
+                      <div onClick={()=>setOpen(false)}>
                        <Link to="card">
                           <Button text="VIEW CART"   className="w-full rounded-[5px]"/>
                        </Link>
+                      </div>
                     </div>
                 </Flex>
             </Flex>

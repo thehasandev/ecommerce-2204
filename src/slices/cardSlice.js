@@ -12,8 +12,8 @@ export const cardSlice = createSlice({
         
         let arr=[]
         state.card.map((item)=>{
-           if(item.title==action.payload.title){
-            item.quantity = item.quantity+1
+           if(item.title == action.payload.title){
+            item.quantity = item.quantity + 1
             arr.push(item.title)
            }
         })
