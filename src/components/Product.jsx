@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from '../components/Image'
 
 import Badge from '../components/Badge'
@@ -7,16 +7,26 @@ import PortionHeading from '../components/PortionHeading'
 import { AiFillHeart } from 'react-icons/ai';
 import IconCompare from '../components/Icon/IconCompare'
 import IconAddCard from '../components/Icon/IconAddCard'
-
-
+import { useDispatch } from 'react-redux'
+import { addtocart } from '../slices/cardSlice'
+import { upDown } from '../slices/openDownSlice'
 
 
 function Product({src,productName,price}) {
-let handleSubmit =()=>{
-  console.log("click");
+  const dispatch = useDispatch()
+  
+  const handleAddToCart =()=>{
+    dispatch(addtocart({
+      "imgUrl" : src,
+      "productName" : productName,
+      "price" : price,
+      "quantity" : 1
+    }))
 }
 
-
+const handleOpen =(open)=>{
+   dispatch(upDown(open));
+}
 
 
 
@@ -36,8 +46,8 @@ let handleSubmit =()=>{
               <IconCompare/> 
             </Flex>
 
-            <div onClick={handleSubmit} className="flex justify-end items-center gap-x-4 cursor-pointer">    
-              <p className='text-sm font-dm font-bold text-primary'>Add to Cart</p>
+            <div onClick={handleAddToCart} className="flex justify-end items-center gap-x-4 cursor-pointer">    
+              <p onClick={()=>{handleOpen(true)}} className='text-sm font-dm font-bold text-primary'>Add to Cart</p>
               <IconAddCard />
             </div>
         </div>
@@ -46,7 +56,7 @@ let handleSubmit =()=>{
 
     <Flex className="justify-between items-center mt-4">
            <PortionHeading text={productName}/>
-           <p className='font-dm font-normal text-base text-gray'>{`$ ${price}`}</p>
+           <p className='font-dm font-normal text-base text-gray'>{`$ ${price} : 00`}</p>
     </Flex>
 
     </div>

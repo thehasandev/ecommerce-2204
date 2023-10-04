@@ -11,7 +11,8 @@ import Product from '../components/Product'
 
 function ProductShop() {
   let pageName = useSelector((state)=>state.bractcumb.previusName)
-  console.log(pageName);
+  
+
   return (
     <Container>
     <h2 className='font-dm font-bold text-text49 text-primary'>Product</h2>
