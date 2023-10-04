@@ -5,31 +5,31 @@ import Container from '../Container'
 import Flex from '../Flex'
 import DropMenu from '../Icon/DropMenu'
 import Button from "../Button"
+import ImageOne from "../../assets/product1.png"
+
 
 import {BiSolidUser} from "react-icons/bi"
-import {AiFillCaretDown} from "react-icons/ai"
+import {AiFillCaretDown,AiOutlineCloseSquare} from "react-icons/ai"
 import {GrFormClose} from "react-icons/gr"
 import {BsCartFill} from "react-icons/bs"
+
 import Search from '../Search'
 import { Link } from 'react-router-dom'
 
-
-
-import { useDispatch, useSelector } from 'react-redux'
 import { bradcrumb } from '../../slices/bratcrumbSlice'
 import PortionHeading from '../PortionHeading'
 
-function Searchbar() {
-  let [open,setOpen]=useState(false)
-  let dispatch  = useDispatch()
+import { useDispatch } from 'react-redux'
 
-  let cartData =useSelector((state)=>state.card)
+
+
+function Searchbar() {
+  const dispatch =useDispatch()
+
   
- 
-  
-  let handleNameClick=(name)=>{
-    dispatch(bradcrumb(name))
-  }
+  const [open,setOpen]=useState(false)
+
+
 
   return (
     <Section className="bg-ash py-6 mb-124">
@@ -56,62 +56,82 @@ function Searchbar() {
                         <BsCartFill onClick={()=>{setOpen(true)}} className='cursor-pointer'/>
                         
                         <div className='absolute top-[-13px] left-[15px]   text-xl font-dm font-bold text-primary '>
-                          {cartData.card.length}
+                          5
                         </div>
                        </div>
 
-                    
-                    <div className={`w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 pr-16 pl-16 pb-16 pt-8 z-10 ${open ? "right-0":"right-[-50%] duration-700"}`}>
-                       <Flex className="justify-end">
+                {/* Add to cart Sidebar      */}
+                 <div className={`w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 z-10 ${open ? "right-0":"right-[-50%] duration-700"}`}>
+                       <Flex className="justify-end pr-4 pt-4">
                          <GrFormClose size={40} onClick={()=>{setOpen(false)}}/>
                        </Flex>
-                       <PortionHeading text="SHOPPING CART" className="mt-5 border-b border-ash pb-5"/>
-                      
-                      {
-                        cartData.card.map((item,index)=>(
-                          <Flex key={index} className="mt-5 mb-8">
-                              <div className='w-2/6 text-center'>
-                                <PortionHeading text="Product" className="text-xl mb-5"/>
-                                
-                                <div className=" w-16 mx-auto">
-                                  <img src={item.imgUrl} alt="" />
-                                </div>
-                              
+                       <PortionHeading text="SHOPPING CART" className=" border-b border-solid px-2 border-primary pb-5"/>
+                         
+                         <ul className='flex justify-between mt-5 px-2 '>
+                            <li className='font-dm font-bold text-base text-primary'>Action</li>
+                            <li className='font-dm font-bold text-base text-primary'>Product</li>
+                            <li className='font-dm font-bold text-base text-primary'>Name</li>
+                            <li className='font-dm font-bold text-base text-primary'>Price</li>
+                            <li className='font-dm font-bold text-base text-primary'>Quantity</li>
+                            <li className='font-dm font-bold text-base text-primary'>Subtotal</li>
+                         </ul>
+      
+               <ul  className='flex items-center  mt-5 bg-[#454449] py-2'>
+                            
+                            <li  className='w-32 pl-5'>
+                              <AiOutlineCloseSquare size={30} className='text-white '/>
+                            </li>
+                            
+                            <li className='w-16 px-1 '>
+                              <img src={ImageOne} alt="" className='w-full'/>
+                            </li>
+
+                            <li className='w-[200px] pl-8   font-dm font-medium text-base text-center text-white'>
+                              Productone
+                            </li>
+
+                            <li className='w-36 pl-2  font-dm font-medium text-base  text-white'>
+                             500
+                            </li>
+
+                            <li className='w-16  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-2 items-center '>
+                              <button className='text-xl text-white'>-</button>
+                              5
+                              <button  className='text-xl text-white'>+</button>
+                            </li>
+
+                            <li className='w-36 text-right pr-4 font-dm font-medium text-base text-white'>
+                              5000
+                            </li>
+                      </ul>
+
+
+                         <p className='font-dm font-medium text-xl pr-5 mt-12 text-right text-primary'>Tottal : 100000</p>
+
+                         <Flex className="justify-center mt-5 gap-x-5 ">
+                              <div className='w-5/12' onClick={()=>setOpen(false)}>
+                                <Link to="/checkout">
+                                  <Button text="CHECK OUT NOW" hover className="w-full rounded-[5px] bg-[#454449] border-[#454449]"/>
+                                </Link>
                               </div>
+                   
+                            <div className='w-5/12' onClick={()=>setOpen(false)}>
+                              <Link to="card">
+                                  <Button text="VIEW CART"   className="w-full rounded-[5px] "/>
+                              </Link>   
+                            </div>
 
-                              <div className='w-2/6 text-center'>
-                                <PortionHeading text="Name" className="text-xl mb-5"/>
-                                <p className='font-dm font-bold text-base text-primary'>{item.title}</p>
-                              </div>
+                         </Flex>
 
-                              <div className='w-2/6 text-center'>
-                                <PortionHeading text="Price" className="text-xl mb-5"/>
-                                <p className='font-dm font-bold text-base text-primary'>{item.price}</p>
-                              </div>
+                       
 
-                              <div className='w-2/6 text-center'>
-                              <PortionHeading text="Quantity" className="text-xl mb-5"/>
-                              <p className='font-dm font-bold text-base text-primary '>{item.quantity}</p>
-                              </div>
-                          </Flex>
+                
 
-                        )
-                             
-                        )
-                      }
-                    
+                 
 
-                        <div onClick={()=>setOpen(false)}>
-                          <Link to="/checkout">
-                             <Button text="CHECK OUT NOW" hover className="w-full my-5 rounded-[5px]"/>
-                          </Link>
-                        </div>
-                      <div onClick={()=>setOpen(false)}>
-                       <Link to="card">
-                          <Button text="VIEW CART"   className="w-full rounded-[5px]"/>
-                       </Link>
-                      </div>
                     </div>
+                   
+                 
                 </Flex>
             </Flex>
         </Container>

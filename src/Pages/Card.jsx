@@ -4,7 +4,7 @@ import Container from '../components/Container'
 import SubHeading from '../components/SubHeading'
 import Flex from '../components/Flex'
 import { Link } from 'react-router-dom'
-import CardOne from "../assets/card.png"
+import OneImage from "../assets/product1.png"
 
 import {AiOutlineRight} from "react-icons/ai"
 import { useSelector } from 'react-redux'
@@ -14,7 +14,7 @@ import PortionHeading from '../components/PortionHeading'
 
 function Card() {
     let pageName = useSelector((state)=>state.bractcumb.previusName)
-    let cardData =useSelector((state)=>state.card)
+    
    
     
   return (
@@ -34,32 +34,32 @@ function Card() {
             
         </Flex>
            
-        <ul className='bg-ash flex px-8 py-4 my-5 gap-x-[240px]'>
+        <ul className='bg-ash flex justify-between p-4'>
+                <li className='font-dm font-bold text-base text-primary'>Action</li>
                 <li className='font-dm font-bold text-base text-primary'>Product</li>
                 <li className='font-dm font-bold text-base text-primary'>Name</li>
                 <li className='font-dm font-bold text-base pl-10 text-primary'>Price</li>
                 <li className='font-dm font-bold text-base text-primary'>Quantity</li>
-                <li className='font-dm font-bold  text-base text-primary'>Total</li> 
+                <li className='font-dm font-bold  text-base text-primary'>Sub Total</li> 
         </ul>
 
-        {
-          cardData.card.map((item,index)=>(
-            <div className='flex items-center gap-x-[250px]  py-4 my-5'>
-            
-                <div className="w-16">
-                    <img src={item.imgUrl} alt="img1" />
-                </div>
+        <ul className='bg-ash flex items-center justify-center p-4 border-b border-gray'>
+                <li className='w-[380px]  font-dm font-bold text-base text-primary'>Action</li>
+                <li className='w-20   font-dm font-bold text-base text-primary'><img src={OneImage} alt="img1" className='w-16'/></li>
+                <li className='w-[500px]  text-center pl-36  font-dm font-bold text-base text-primary'>Produt One</li>
+                <li className='w-[500px]  text-center pl-[65px]  font-dm font-bold text-base  text-primary'>100</li>
+                <li className='w-32 flex  items-center justify-center gap-5 font-dm border border-primary border-solid ml-24 font-bold text-base text-primary'>
+                    <button className='text-lg text-primary'>-</button>
+                               5
+                    <button className='text-lg  text-primary'>+</button>
+                </li>
+                <li className='w-96 text-right  font-dm font-bold  text-base text-primary'>1000</li> 
+        </ul>
 
-                <p className='font-dm w-32 font-bold  text-base text-primary'>{item.title}</p>
-                <p className='font-dm w-12 font-bold  text-base text-primary'>{item.price}</p>
-                <p className='font-dm w-8 font-bold text-base text-primary'>{item.quantity}</p>
-                <p className='font-dm w-24 font-bold text-base text-primary'>{`1000`}</p>
-            
-            </div>
-          )
-            
-          )
-        }
+    
+         
+          
+        
 
        
           <select className='w-32 border mt-8 border-gray/50'>
@@ -76,13 +76,13 @@ function Card() {
                     <thead>
                         <tr>
                             <th className='border border-gray/50  font-dm font-bold text-base text-primary py-4 px-32'>Subtotal</th>
-                            <th className='border border-gray/50 font-dm font-normal text-base text-gray py-4 px-32'>Total</th>  
+                            <th className='border border-gray/50 font-dm font-normal text-base text-gray py-4 px-32'>654654</th>  
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td className='border border-gray/50 font-dm font-bold text-base text-primary py-4 px-32'>389.99 $</td>
+                            <td className='border border-gray/50 font-dm font-bold text-base text-primary py-4 px-32'>Total</td>
                             <td className='border border-gray/50 font-dm font-normal text-base text-gray py-4 px-32'>389.99 $</td>  
                         </tr>
                     </tbody>
