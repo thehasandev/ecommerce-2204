@@ -7,7 +7,7 @@ function NextSlide({className,  onClick}) {
    
   return (
     <div
-    className={`${className}  w-16 h-16 rounded-full flex justify-center items-center bg-[#979797]`}
+    className={`${className} absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full flex justify-center items-center bg-[#979797]`}
     onClick={onClick}
   >
     <RightArrow/>

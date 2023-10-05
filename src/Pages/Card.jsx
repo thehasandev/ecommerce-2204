@@ -71,19 +71,19 @@ function Card() {
   cartData.map((item,index)=>{
     const {imgUrl,productName,price,quantity} = item
 
-    return<ul key={index} className='bg-ash flex items-center justify-center p-4 border-b border-gray'>
-                <li onClick={()=>{handleRemove(item)}} className='w-[380px]  font-dm font-bold text-base text-primary cursor-pointer'>
+    return<ul key={index} className='bg-ash flex items-center  p-4 border-b border-gray'>
+                <li className='w-[280px] font-dm font-bold text-base text-primary cursor-pointer' onClick={()=>{handleRemove(item)}} >
                 <AiOutlineCloseSquare size={30} className='text-primary '/>
                 </li>
-                <li className='w-20   font-dm font-bold text-base text-primary'><img src={imgUrl} alt="img1" className='w-16'/></li>
-                <li className='w-[500px]  text-center pl-[150px]   font-dm font-bold text-base text-primary'>{productName}</li>
-                <li className='w-[500px]  text-center pl-[40px]  font-dm font-bold text-base  text-primary'>{price}</li>
-                <li className='w-32 flex  items-center justify-center gap-5 font-dm border border-primary border-solid ml-24 font-bold text-base text-primary'>
+                <li className='  font-dm font-bold text-base text-primary'><img src={imgUrl} alt="img1" className='w-16'/></li>
+                <li className='w-[550px] text-center  font-dm font-bold text-base text-primary'>{productName}</li>
+                <li className='w-[200px] pl-8  font-dm font-bold text-base  text-primary'>{price}</li>
+                <li className=' flex  items-center px-1 justify-center gap-5 font-dm border border-primary border-solid ml-24 font-bold text-base text-primary'>
                     <button onClick={()=>{handleDecrement(item)}} className='text-lg text-primary'>-</button>
                                {quantity}
                     <button onClick={()=>{handleIncrement(item)}} className='text-lg  text-primary'>+</button>
                 </li>
-                <li className='w-96 text-right  font-dm font-bold  text-base text-primary'>{price*quantity}</li> 
+                <li className='w-[300px] text-right   font-dm font-bold  text-base text-primary'>{price*quantity}</li> 
         </ul>
   })
 }
@@ -115,7 +115,7 @@ function Card() {
                     <tbody>
                         <tr>
                             <td className='border border-gray/50 font-dm font-bold text-base text-primary py-4 px-32'>Total</td>
-                            <td className='border border-gray/50 font-dm font-normal text-base text-gray py-4 px-32'>{totall}</td>  
+                            <td className='border border-gray/50 font-dm font-bold text-base text-primary py-4 px-32'>{totall}</td>  
                         </tr>
                     </tbody>
                     

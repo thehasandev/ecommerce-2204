@@ -121,30 +121,31 @@ function Searchbar() {
                     {
                      cartData.map((item,index)=>{
                        const {imgUrl,productName,price,quantity} = item
-               return  <ul key={index}  className='flex items-center  mt-5 bg-[#454449] py-2'>   
-                             <li onClick={()=>{handleRemove(item)}}  className='w-32 pl-5 cursor-pointer'>
+               return  <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
+                             <li className='w-28 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
                                <AiOutlineCloseSquare size={30} className='text-white '/>
                              </li>
                              
-                             <li className='w-16 px-1 '>
+                             <li className='w-16 mr-1 '>
                                <img src={imgUrl} alt="" className='w-full'/>
                              </li>
 
-                             <li className='w-[200px] pl-8   font-dm font-medium text-base text-center text-white'>
+                             <li className='w-32  font-dm font-medium text-base text-center text-white'>
                                {productName}
+                              
                              </li>
 
-                             <li className='w-36 pl-5 font-dm font-medium text-base  text-white'>
+                             <li className='w-20 pl-2 font-dm font-medium text-base  text-white'>
                              {price}
                              </li>
 
-                             <li className='w-[100px]  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 items-center '>
+                             <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
                                <button  onClick={()=>{handleDecrement(item)}} className='text-xl text-white'>-</button>
                                 {quantity}
                                <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
                              </li>
 
-                             <li className='w-36 text-right pr-4 font-dm font-medium text-base text-white'>
+                             <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
                                {price*quantity}
                              </li>
                        </ul>
