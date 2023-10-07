@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Section from "../components/Section"
 import Container from "../components/Container"
@@ -20,7 +20,20 @@ import "slick-carousel/slick/slick.css";
 import PrevSlide from "../components/PrevSlide"
 import NextSlide from "../components/NextSlide"
 
+import axios from 'axios'
+
 function Home() {
+  const [productData,setProductData] = useState([])
+
+  useEffect(()=>{
+    const asn = async()=>{
+      const data = await axios.get("http://localhost:1337/api/products?populate=*")
+      setProductData(data.data.data)
+    }
+    asn()
+  },[])
+   
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -36,25 +49,14 @@ function Home() {
      <SubHeading text="New Arrivals" className="mb-5"/>
      <div className='relative'>
         <Slider {...settings}>
-          <div className='w-24'>
-                  <Product productName="Product One" price={44}  src={Product1}/>
-          </div>
-          <div className='w-24'>
-                  <Product productName="Product Two" price={44}  src={Product2}/>
-          </div>
-          <div className='w-24'>
-                  <Product productName="Product Three" price={44}  src={Product3}/>
-          </div>
-          <div className='w-24'>
-                  <Product productName="Product Four" price={44}  src={Product4}/>
-          </div>
-          <div className='w-24'>
-                  <Product productName="Product Five" price={44}  src={Product5}/>
-          </div>
-          <div className='w-24'>
-                  <Product productName="Product Six" price={44}  src={Product6}/>
-          </div>
           
+         {
+          productData.map((item)=>(
+            <div key={item.id} className='w-24'>
+                    <Product productName={item.attributes.title} price={item.attributes.price}  src={`http://localhost:1337${item.attributes.product_img.data[0].attributes.url}`} badge={item.attributes.badge} />
+            </div>
+          ))
+         } 
         </Slider>
       </div>
 
@@ -65,24 +67,18 @@ function Home() {
    <Section className="mt-36">
      <Container>
         <SubHeading text="Our BestSelling" className="mb-5" price={60} src={Product5}/>
-         <Flex className="justify-between">
-            
-            <div className='w-24'>
-              <Product productName="Product Five" price={50} src={Product6}/>
-            </div>
-            
-            <div className='w-24'>
-               <Product productName="Product Six" price={88} src={Product7}/>
-            </div>
-
-            <div className='w-24'>
-               <Product productName="Product Seven" price={96} src={Product8}/>
-            </div>
-
-            <div className='w-24'>
-              <Product productName="Product Eight" price={99} src={Product9}/>
-            </div>
-
+         <Flex className="justify-between">   
+         {
+          productData.map((item)=>{
+            if(item.attributes.cetagoris == "bestseller"){
+             return  <div key={item.id} className='w-24'>
+                     <Product productName={item.attributes.title} price={item.attributes.price}  src={`http://localhost:1337${item.attributes.product_img.data[0].attributes.url}`} badge={item.attributes.badge} />
+                     </div>
+            }
+          }
+           
+          )
+         } 
          </Flex>
      </Container>
    </Section>

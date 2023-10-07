@@ -12,7 +12,7 @@ import { addtocart } from '../slices/cardSlice'
 import { upDown } from '../slices/openDownSlice'
 
 
-function Product({src,productName,price}) {
+function Product({src,productName,price,badge}) {
   const dispatch = useDispatch()
   
   const handleAddToCart =()=>{
@@ -34,7 +34,7 @@ const handleOpen =(open)=>{
     <div className='mx-5'>
     <div className='relative group overflow-hidden '>
         <Image src={src} className="w-full"/>
-        <Badge text="New"/>
+        <Badge text={badge}/>
 
         <div className='bg-white p-8 absolute -bottom-44 w-full group-hover:bottom-0 duration-500'>
             <Flex className="justify-end items-center gap-x-4 ">
@@ -54,10 +54,10 @@ const handleOpen =(open)=>{
        
     </div>
 
-    <Flex className="justify-between items-center mt-4">
-           <PortionHeading text={productName}/>
+   
+           <PortionHeading text={productName} className="py-2 text-xl font-semibold"/>
            <p className='font-dm font-normal text-base text-gray'>{`$ ${price} : 00`}</p>
-    </Flex>
+   
 
     </div>
   )
