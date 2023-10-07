@@ -8,11 +8,12 @@ import Input from '../components/Input'
 import { useSelector } from 'react-redux'
 import Button from '../components/Button'
 import { Link } from 'react-router-dom'
+import Section from '../components/Section'
 
 function Login() {
     let pageName = useSelector((state)=>state.bractcumb.previusName)
   return (
-    <div>
+    <Section className="mt-124">
         <Container>
         <SubHeading text="Login" className="mb-2"/>
         <Flex className="items-center gap-x-2">
@@ -43,7 +44,7 @@ function Login() {
            <p className='font-dm font-normal text-gray w-664 mt-10  text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
            <Button text="Continue" className="px-28 mt-10"/>
         </Container>
-    </div>
+    </Section>
   )
 }
 

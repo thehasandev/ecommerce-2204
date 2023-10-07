@@ -12,40 +12,43 @@ import Map from "../assets/map.png"
 
 import {AiOutlineRight} from "react-icons/ai"
 import { useSelector } from 'react-redux'
+import Section from '../components/Section'
 
 function Contacts() {
     let pageName = useSelector((state)=>state.bractcumb.previusName)
   return (
-    <Container>
-           <SubHeading text="Contacts" className="mb-2"/>
-            <Flex className="items-center gap-x-2">
-              <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
-      
-                <Link to={pageName=="Home" ? "/"  : pageName == "Sing up"? "/sing-up" : `/${pageName}`}>
-                  {pageName}
-                </Link>
-                
-                <AiOutlineRight/>
-              </p>
-              <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase'>{window.location.pathname.replace("/"," ")}</p>
-            
-            </Flex>
+    <Section className="mt-124">
+      <Container>
+            <SubHeading text="Contacts" className="mb-2"/>
+              <Flex className="items-center gap-x-2">
+                <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
+        
+                  <Link to={pageName=="Home" ? "/"  : pageName == "Sing up"? "/sing-up" : `/${pageName}`}>
+                    {pageName}
+                  </Link>
+                  
+                  <AiOutlineRight/>
+                </p>
+                <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase'>{window.location.pathname.replace("/"," ")}</p>
+              
+              </Flex>
 
-            <SubHeading text="Fill up a Form" className="text-text39 mb-10 mt-32"/>
-             <Flex className="justify-between flex-wrap gap-y-6 ">
-                  <div className='w-4/6'>
-                    <Input text="Name" placeholder="Your Name Here" type="text"/>
-                  </div>
-                  <div className='w-4/6'>
-                    <Input text="Email" placeholder="Your Email Here" type="text"/>
-                  </div>
-                  <div className='w-4/6'>
-                    <Input text="Message" placeholder="Your Message Here" type="text"/>
-                  </div>
-             </Flex>
-             <Button text="Post" className="px-28 mt-10" hover/>
-             <Image src={Map} className="mt-32"/>
-    </Container>
+              <SubHeading text="Fill up a Form" className="text-text39 mb-10 mt-32"/>
+              <Flex className="justify-between flex-wrap gap-y-6 ">
+                    <div className='w-4/6'>
+                      <Input text="Name" placeholder="Your Name Here" type="text"/>
+                    </div>
+                    <div className='w-4/6'>
+                      <Input text="Email" placeholder="Your Email Here" type="text"/>
+                    </div>
+                    <div className='w-4/6'>
+                      <Input text="Message" placeholder="Your Message Here" type="text"/>
+                    </div>
+              </Flex>
+              <Button text="Post" className="px-28 mt-10" hover/>
+              <Image src={Map} className="mt-32"/>
+      </Container>
+    </Section>
   )
 }
 

@@ -12,6 +12,7 @@ import {AiOutlineRight} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux'
 import { bradcrumb } from "../../src/slices/bratcrumbSlice"
 import { Link } from 'react-router-dom'
+import Section from '../components/Section'
 
 function Singup() {
 let pageName =useSelector((state)=>state.bractcumb.previusName)
@@ -33,7 +34,7 @@ let handleNameClick=(name)=>{
 
 
   return (
-    <div>
+    <Section className="mt-124">
        <Container>
            <SubHeading text="Sing up" className="mb-2"/>
             <Flex className="items-center gap-x-2">
@@ -167,7 +168,7 @@ let handleNameClick=(name)=>{
 
 
        </Container>
-    </div>
+    </Section>
   )
 }
 
