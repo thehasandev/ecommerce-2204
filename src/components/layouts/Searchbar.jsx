@@ -122,7 +122,7 @@ function Searchbar() {
                      cartData.map((item,index)=>{
                        const {imgUrl,productName,price,quantity} = item
                return  <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
-                             <li className='w-28 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
+                             <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
                                <AiOutlineCloseSquare size={30} className='text-white '/>
                              </li>
                              
@@ -130,12 +130,12 @@ function Searchbar() {
                                <img src={imgUrl} alt="" className='w-full'/>
                              </li>
 
-                             <li className='w-32  font-dm font-medium text-base text-center text-white'>
+                             <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
                                {productName}
                               
                              </li>
 
-                             <li className='w-20 pl-2 font-dm font-medium text-base  text-white'>
+                             <li className='w-[100px]  font-dm font-medium text-base  text-white'>
                              {price}
                              </li>
 

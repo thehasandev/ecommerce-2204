@@ -45,11 +45,14 @@ const handleOpen =(open)=>{
               <p className='text-sm font-dm font-bold text-gray'>Compare</p> 
               <IconCompare/> 
             </Flex>
-
+           
+           <div onClick={()=>{handleOpen(true)}}>
             <div onClick={handleAddToCart} className="flex justify-end items-center gap-x-4 cursor-pointer">    
-              <p onClick={()=>{handleOpen(true)}} className='text-sm font-dm font-bold text-primary'>Add to Cart</p>
+              <p  className='text-sm font-dm font-bold text-primary'>Add to Cart</p>
               <IconAddCard />
             </div>
+
+           </div>
         </div>
        
     </div>
