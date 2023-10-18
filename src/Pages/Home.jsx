@@ -28,7 +28,7 @@ import PrevSlide from "../components/PrevSlide"
 import NextSlide from "../components/NextSlide"
 import Facility from '../components/Facility'
 
-import "../app.css"
+
 
 
 
