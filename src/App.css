@@ -1,0 +1,19 @@
+.slick-dots ul li{
+    margin-top: -5px;
+}
+.slick-dots ul li button{ 
+    width: 30px;
+    height: 30px;
+    font-size:0px;
+    border-right: 5px solid white;
+   
+}
+
+.slick-dots ul .slick-active button{ 
+    font-size: 20px;
+    border-color:#262626 ;
+   
+}
+
+
+

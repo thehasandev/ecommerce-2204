@@ -5,188 +5,193 @@ import Container from "../components/Container"
 import Product from '../components/Product'
 import Flex from '../components/Flex'
 import SubHeading from "../components/SubHeading"
-import Product1 from "../assets/product1.png"
-import Product2 from "../assets/product2.png"
-import Product3 from "../assets/product3.png"
-import Product4 from "../assets/product4.png"
-import Product5 from "../assets/product5.png"
 
-import Aone from "../assets/fasilityOne.png"
-import Atwo from "../assets/fasilityTwo.png"
-import Athree from "../assets/fasilityThree.png"
+import Image from '../components/Image'
+
+import One from "../assets/product1.png"
+
+import IconTwo from "../assets/2.png"
+import Car from "../assets/car.png"
+import Return from "../assets/return.png"
+import OfferOne from "../assets/fasilityOne.png"
+import OfferTwo from "../assets/fasilityTwo.png"
+import OfferThree from "../assets/fasilityThree.png"
+import Year from "../assets/year.png"
+
+import Banner from "../assets/banner.png"
 
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
+
 import PrevSlide from "../components/PrevSlide"
 import NextSlide from "../components/NextSlide"
-
-import axios from 'axios'
 import Facility from '../components/Facility'
 
+import "../app.css"
+
+
+
 function Home() {
-  const [banner,setBannerData] =useState([])
-  const [fascilitie,setFascilitie] =useState([])
-  const [productData,setProductData] = useState([])
-  const [bannerTwo,setBannerTwo] = useState([])
-   
-  // banner 
-  useEffect(()=>{
-     const asy =async()=>{
-        let data = await axios.get("http://localhost:1337/api/banners?populate=*")
-        setBannerData(data.data.data);
-     }
-     asy()
-  },[])
+  let [color,setColor]=useState("")
+  console.log(color);
+ 
+  const settingBanner = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows:false,
+    appendDots: dots => (
+      <div>
+        <ul className={`absolute top-1/2 left-5 -translate-y-1/2 `}>{dots}</ul>
+      </div>
+    ),
+    
+    customPaging: i => (
+      <button className={i==0 ? "text-[red]" : i==1 ? "text-[blue]": "text-[green]"}>
+        0{i + 1 }
+      </button>
+    ),
+  };
   
-  //Facilities
-  useEffect(()=>{
-    const a =async()=>{
-     const data =await axios.get("http://localhost:1337/api/facilities?populate=*")
-     setFascilitie(data.data.data)
-    }
-    a()
-  },[])
 
-  // product 
-  useEffect(()=>{
-    const asn = async()=>{
-      const data = await axios.get("http://localhost:1337/api/products?populate=*")
-      setProductData(data.data.data)
-    }
-    asn()
-  },[])
 
-  //Banner Tow
-  useEffect(()=>{
-    const asnk = async()=>{
-       const data = await axios.get("http://localhost:1337/api/banner-twos?populate=*")
-      setBannerTwo(data.data.data);
-    }
-    asnk()
-  },[])
-
-  
-   
-
-  const settings = {
+  const settingProduct = {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow:<NextSlide/>,
-    prevArrow:<PrevSlide/>
+    nextArrow:<NextSlide class="absolute top-1/2 -translate-y-full right-5  z-10"/>,
+    prevArrow:<PrevSlide class="absolute top-1/2 -translate-y-full left-5 z-10"/>
   };
 
   return (
     <>
-
-    {/* banner  */}
-    <Section>
-        {
-          banner.map(item=>(
-            <img key={item.id} src={`http://localhost:1337${item.attributes.images.data[0].attributes.url}`} alt="" />
-          ))
-        }
-    </Section>
+     <Section>
+        <Slider {...settingBanner}>
+          <Image src={Banner}/>
+          <Image src={Banner}/>
+          <Image src={Banner}/>
+       
+          
+        </Slider>
     
-    {/* Facilitis  */}
-    <Section className="mt-8 mb-32">
+     </Section> 
+
+    
+
+     <Section className="mb-40">
+       <Container>
+         <Flex className="justify-between">
+            <Facility src={IconTwo} alt="two" title="Two years warranty"/>
+            <Facility src={Car} alt="two" title="Free shipping"/>
+            <Facility src={Return} alt="two" title="Return policy in 30 days"/>
+         </Flex>
+       </Container>
+     </Section>
+
+     <Section>
+       <Container>
+         <Flex className="justify-between"> 
+           <div className='w-49'>
+             <Image src={OfferOne} className="w-full"/>
+           </div>
+
+           <div className='w-49'>
+              <Image src={OfferTwo} className="mb-10 w-full"/>
+              <Image src={OfferThree} className=" w-full"/>
+           </div>
+         </Flex>
+       </Container>
+     </Section>
+
+     <Section className="mt-32">
+       <Container>
+         <SubHeading text="New Arrivals" className="mb-12"/>
+            <Slider {...settingProduct}>
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+             
+            </Slider>
+       </Container>
+     </Section>
+
+
+     <Section className="mt-32">
       <Container>
-         <Facility/>
-        
-         <Flex className="justify-between mt-32">
-          {
-            fascilitie.map((item)=>{
-              if(item.attributes.title == "one"){
-                 return   <img key={item.id} src={`http://localhost:1337${item.attributes.images.data[0].attributes.url}`}/> 
-              }
-            })
-          }
-
-          <div className='flex flex-col gap-y-10'>
-              {
-                fascilitie.map((item)=>{
-                  if(item.attributes.title == "two"){
-                    return   <img key={item.id} src={`http://localhost:1337${item.attributes.images.data[0].attributes.url}`}/> 
-                  }
-                })
-              }
-          </div>
-
-        </Flex>
-      </Container>
-    </Section>
-
-  {/* New Arrival  */}
-    <Section>
-      <Container>
-      <SubHeading text="New Arrivals" className="mb-12"/>
-      <div className='relative'>
-          <Slider {...settings}>
-            
-          {
-            productData.map((item)=>(
-              <div key={item.id} className='w-24'>
-                      <Product productName={item.attributes.title} price={item.attributes.price}  src={`http://localhost:1337${item.attributes.product_img.data[0].attributes.url}`} badge={item.attributes.badge} />
+         <SubHeading text="Best Selling" className="mb-12"/>
+            <Flex className="justify-between">
+              <div className='w-24'>
+                <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
               </div>
-            ))
-          } 
-          </Slider>
-        </div>
 
-        
+              <div className='w-24'>
+                <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+              </div>
+
+              <div className='w-24'>
+                <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+              </div>
+
+              <div className='w-24'>
+                <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+              </div>
+            </Flex>
       </Container>
-    </Section>
-  
-  {/* Best Selling  */}
-    <Section className="mt-36">
+     </Section>
+    
+
+    <Section className="mt-32">
       <Container>
-          <SubHeading text="Our BestSelling" className="mb-12" price={60} src={Product5}/>
-          <Flex className="justify-between">   
-          {
-            productData.map((item)=>{
-              if(item.attributes.cetagoris == "bestseller"){
-              return  <div key={item.id} className='w-24'>
-                      <Product productName={item.attributes.title} price={item.attributes.price}  src={`http://localhost:1337${item.attributes.product_img.data[0].attributes.url}`} badge={item.attributes.badge} />
-                      </div>
-              }
-            }
-            
-            )
-          } 
-          </Flex>
+        <Image src={Year} alt="Year" className="w-full"/>
       </Container>
     </Section>
 
-    {/* Banner Tow  */}
-    <Section className="my-32">
-      <Container>
-        {bannerTwo.map(item=>(
-          <img key={item.id} src={`http://localhost:1337${item.attributes.image.data[0].attributes.url}`}/>
-        ))}
-      </Container>
-    </Section>
+     <Section className="mt-32">
+        <Container>
+          <SubHeading text="Special Offers" className="mb-12"/>
+              <Flex className="justify-between">
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
 
-    {/* Special Offers */}
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
 
-    <Section className="mt-36">
-      <Container>
-          <SubHeading text="Special Offers" className="mb-12" price={60} src={Product5}/>
-          <Flex className="justify-between">   
-          {
-            productData.map((item)=>{
-              if(item.attributes.cetagoris == "special"){
-              return  <div key={item.id} className='w-24'>
-                      <Product productName={item.attributes.title} price={item.attributes.price}  src={`http://localhost:1337${item.attributes.product_img.data[0].attributes.url}`} badge={item.attributes.badge} />
-                      </div>
-              }
-            }
-            )
-          } 
-          </Flex>
-      </Container>
-    </Section>
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+
+                <div className='w-24'>
+                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                </div>
+              </Flex>
+        </Container>
+     </Section>
     </>
   )
 }

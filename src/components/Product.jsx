@@ -12,12 +12,13 @@ import { addtocart } from '../slices/cardSlice'
 import { upDown } from '../slices/openDownSlice'
 
 
-function Product({src,productName,price,badge}) {
+function Product({src,alt,productName,price,badge}) {
   const dispatch = useDispatch()
   
   const handleAddToCart =()=>{
     dispatch(addtocart({
       "imgUrl" : src,
+      "alt"    :alt,
       "productName" : productName,
       "price" : price,
       "quantity" : 1
@@ -33,7 +34,7 @@ const handleOpen =(open)=>{
   return (
     <div className='mx-5'>
     <div className='relative group overflow-hidden '>
-        <Image src={src} className="w-full"/>
+        <Image src={src} alt={alt} className="w-full"/>
         <Badge text={badge}/>
 
         <div className='bg-white p-8 absolute -bottom-44 w-full group-hover:bottom-0 duration-500'>
