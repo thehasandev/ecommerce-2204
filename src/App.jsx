@@ -16,6 +16,7 @@ import Contacts from './Pages/Contacts';
 import Checkout from './Pages/Checkout';
 import About from './Pages/About';
 import Card from './Pages/Card';
+import ProductDetails from './Pages/ProductDetails';
 
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
 
     <Route path='/' element={<RouteLayouts/>}>
       <Route path='/' element = {<Home/>}/>
+      <Route path='/product-details' element = {<ProductDetails/>}/>
       <Route path='/login' element = {<Login/>}/>
       <Route path='/sing-up' element = {<Singup/>}/>
       <Route path='/shop' element = {<ProductShop/>}/> 

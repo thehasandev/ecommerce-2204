@@ -12,7 +12,8 @@ export default {
       fontSize: {
         'text25': '25px',
         'text39': '39px',
-        'text49': '49px'
+        'text49': '49px',
+        'text99': '99px'
       },
       colors: {
         'primary': '#262626',
@@ -31,6 +32,7 @@ export default {
         '57': '57px',
       },
       width:{
+          45: '45%',
           48: '48%',
           49: '49%',
           24: '24%',

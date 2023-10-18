@@ -12,6 +12,7 @@ import Section from '../components/Section'
 
 function Login() {
     let pageName = useSelector((state)=>state.bractcumb.previusName)
+  
   return (
     <Section className="mt-124">
         <Container>
