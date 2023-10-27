@@ -64,6 +64,8 @@ function Home() {
 
   return (
     <>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis necessitatibus enim veritatis dolores officiis ullam error repellendus dignissimos id nobis placeat expedita iure dolorem culpa consequatur perspiciatis laudantium est aut, tempora alias cupiditate. Quam, optio consequuntur. Quia, aspernatur labore nam minus vitae suscipit mollitia. Porro, consequuntur quibusdam! Illum harum debitis ad tempore maiores unde nihil quasi deserunt impedit, aperiam autem sequi eveniet possimus porro repellendus magnam beatae quis libero, commodi hic asperiores nisi qui? Ad cupiditate corrupti, hic aliquid quae tenetur eligendi earum culpa aspernatur doloribus officiis illum tempora dolore veritatis sunt autem aperiam doloremque quasi vero placeat amet adipisci.</p>
      <Section>
         <Slider {...settingBanner}>
           <Image src={Banner}/>
@@ -71,6 +73,7 @@ function Home() {
           <Image src={Banner}/>
         </Slider>
      </Section> 
+     
  
      <Section className="mt-2 mb-40">
        <Container>
