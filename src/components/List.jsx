@@ -1,8 +1,8 @@
 import React from 'react'
 
-function List({text,className}) {
+function List({text,side,className}) {
   return (
-    <li className={`font-dm font-normal text-sm hover:text-primary ${className}`}>{text}</li>
+    <li className={`font-dm font-bold text-sm  ${side? "text-gray hover:text-primary mb-5":"text-primary  hover:text-primary"} ${className}`}>{text}</li>
   )
 }
 
