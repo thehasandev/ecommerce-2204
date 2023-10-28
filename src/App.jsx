@@ -17,6 +17,7 @@ import Checkout from './Pages/Checkout';
 import About from './Pages/About';
 import Card from './Pages/Card';
 import ProductDetails from './Pages/ProductDetails';
+import "./App.css"
 
 
 const router = createBrowserRouter(

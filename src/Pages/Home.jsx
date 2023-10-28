@@ -9,6 +9,18 @@ import SubHeading from "../components/SubHeading"
 import Image from '../components/Image'
 
 import One from "../assets/product1.png"
+import Two from "../assets/product2.png"
+import Three from "../assets/product3.png"
+import Four from "../assets/product4.png"
+import Five from "../assets/product5.png"
+import Six from "../assets/product6.png"
+import Seven from "../assets/product7.png"
+import Eight from "../assets/product8.png"
+import Nine from "../assets/product18.png"
+import Ten from "../assets/product10.png"
+import Eleven from "../assets/product11.png"
+import Twilve from "../assets/product13.png"
+
 
 import IconTwo from "../assets/2.png"
 import Car from "../assets/car.png"
@@ -65,7 +77,7 @@ function Home() {
   return (
     <>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis necessitatibus enim veritatis dolores officiis ullam error repellendus dignissimos id nobis placeat expedita iure dolorem culpa consequatur perspiciatis laudantium est aut, tempora alias cupiditate. Quam, optio consequuntur. Quia, aspernatur labore nam minus vitae suscipit mollitia. Porro, consequuntur quibusdam! Illum harum debitis ad tempore maiores unde nihil quasi deserunt impedit, aperiam autem sequi eveniet possimus porro repellendus magnam beatae quis libero, commodi hic asperiores nisi qui? Ad cupiditate corrupti, hic aliquid quae tenetur eligendi earum culpa aspernatur doloribus officiis illum tempora dolore veritatis sunt autem aperiam doloremque quasi vero placeat amet adipisci.</p>
+   
      <Section>
         <Slider {...settingBanner}>
           <Image src={Banner}/>
@@ -105,27 +117,27 @@ function Home() {
          <SubHeading text="New Arrivals" className="mb-12"/>
             <Slider {...settingProduct}>
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={One} alt="One" productName="New Arrival 1" price={44} badge="New"/>
                 </div>
              
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Two} alt="One" productName="New Arrival 2" price={44} badge="New"/>
                 </div>
              
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Three} alt="One" productName="New Arrival 3" price={44} badge="New"/>
                 </div>
              
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Four} alt="One" productName="New Arrival 4" price={44} badge="New"/>
                 </div>
              
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Five} alt="One" productName="New Arrival 5" price={44} badge="New"/>
                 </div>
              
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Six} alt="One" productName="New Arrival 6" price={44} badge="New"/>
                 </div>
              
             </Slider>
@@ -138,19 +150,19 @@ function Home() {
           <SubHeading text="Best Selling" className="mb-12"/>
               <Flex className="justify-between">
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Five} alt="One" productName="Best Selling 1" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Six} alt="One" productName="Best Selling 2" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Seven} alt="One" productName="Best Selling 3" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Eight} alt="One" productName="Best Selling 4" price={44} badge="New"/>
                 </div>
               </Flex>
         </Container>
@@ -170,19 +182,19 @@ function Home() {
           <SubHeading text="Special Offers" className="mb-12"/>
               <Flex className="justify-between">
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Nine} alt="One" productName="Special Offers 1" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Ten} alt="One" productName="Special Offers 2" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Eleven} alt="One" productName="Special Offers 3" price={44} badge="New"/>
                 </div>
 
                 <div className='w-24'>
-                  <Product  src={One} alt="One" productName="DIY Acrylic Wall Clock for Living Room Bed Room Home Decorative" price={44} badge="New"/>
+                  <Product  src={Twilve} alt="One" productName="Special Offers 4" price={44} badge="New"/>
                 </div>
               </Flex>
         </Container>
