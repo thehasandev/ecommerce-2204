@@ -14,6 +14,7 @@ import Nine from "../assets/product21.png"
 import Ten from "../assets/product10.png"
 import Eleven from "../assets/product11.png"
 import Twilve from "../assets/product13.png"
+import Flex from './Flex';
 
 // Example items, to simulate fetching from another resources.
 const items = [
@@ -767,8 +768,8 @@ function Items({ currentItems }) {
   return (
     <div className='flex flex-wrap justify-center'>
       {currentItems &&
-        currentItems.map((item) => (
-          <div >
+        currentItems.map((item,index) => (
+          <div key={index} >
             <Product src={item.src} productName={item.name} badge={item.badge} price={item.price}/>
           </div>
         ))}
@@ -777,19 +778,13 @@ function Items({ currentItems }) {
 }
 
 function Pagination({ itemsPerPage }) {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / itemsPerPage);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     console.log(
@@ -799,20 +794,26 @@ function Pagination({ itemsPerPage }) {
   };
 
   return (
-    <>
+    <div >
       <Items currentItems={currentItems} />
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel=""
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel=""
-        renderOnZeroPageCount={null}
-        className ="flex gap-x-5 mt-14"
-        pageClassName ="bg-primary px-4 text-white py-2"
-      />
-    </>
+        <div className='flex items-end justify-between'>
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel=""
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={pageCount}
+                previousLabel=""
+                renderOnZeroPageCount={null}
+                className ="flex gap-x-5 mt-14"
+                pageClassName ="bg-primary px-4 text-white py-2"
+            />
+           <div>
+             <p className='font-dm font-normal text-base text-gray'>Products from {itemOffset+1} to {endOffset} of {items.length}</p>
+           </div>
+
+        </div>
+    </div>
   );
 }
 

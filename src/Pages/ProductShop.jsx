@@ -15,8 +15,7 @@ import List from "../components/List"
 
 function ProductShop() {
   let pageName = useSelector((state)=>state.bractcumb.previusName)
-  let [show,setShow] =useState(12)
-
+  let [show,setShow] = useState(5)
   return (
     <Section className="mt-124">
       <Container>
@@ -91,7 +90,7 @@ function ProductShop() {
                  <div className='w-10/12'>
                   <div className='flex justify-end mb-14'>
                       <label className='font-dm text-base text-gray mr-5'>Show:</label>
-                      <select onChange={(e)=>{setShow(e.target.value)}} name="w-full" id="">
+                      <select value={show} onChange={(e)=>{setShow(e.target.value)}} name="w-full" id="">
                         <option></option>
                         <option>3</option>
                         <option>6</option>
@@ -101,8 +100,9 @@ function ProductShop() {
                       </select>
 
                   </div>
-
-                    <Pagination itemsPerPage={show}/>
+            
+                    <Pagination itemsPerPage={show == 3 ? 3 : show == 6 ? 6 : show==12 ? 12 : show == 15 ? 15 : show== 18 ? 18 : 12 }/>
+                  
                  </div>
               </Flex>
            </Container>
