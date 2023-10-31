@@ -805,7 +805,7 @@ function Pagination({ itemsPerPage }) {
                 pageCount={pageCount}
                 previousLabel=""
                 renderOnZeroPageCount={null}
-                className ="flex gap-x-5 mt-14"
+                className ="flex gap-x-5 mt-14 cursor-pointer"
                 pageClassName ="bg-primary px-4 text-white py-2"
             />
            <div>
