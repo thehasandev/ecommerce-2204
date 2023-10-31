@@ -32,6 +32,8 @@ function Searchbar() {
   const dispatch = useDispatch()
 
   const cartData = useSelector((state)=>state.cart.cartItem)
+  
+  
 
   
   const handleNameClick =(name)=>{
@@ -83,13 +85,18 @@ function Searchbar() {
                 </div>
 
                 <Flex className='w-1/5 gap-x-10 justify-end'>
-                    <Flex>
+                    <Flex className="relative">
                       <Link to="/sing-up" onClick={()=>{handleNameClick("Sing up")}}>
                          <BiSolidUser/>
                       </Link>
                     
                     <AiFillCaretDown/>
-                    </Flex>
+                     <div className='absolute top-7 left-[-180px] z-10 w-96'>
+                       <button className='px-16 py-4 bg-primary font-dm font-bold text-sm text-white w-[220px] mb-2'>My Account</button>
+                       <button className='px-16 py-4 bg-trnasparent font-dm font-bold text-sm text-primary hover:bg-primary duration-300 hover:text-white w-[220px]'>Log Out</button>
+                    </div> 
+                </Flex>
+                      
                        
                        <div className='relative'>
                         <BsCartFill onClick={()=>{handleOpen(true)}} className='cursor-pointer'/>
