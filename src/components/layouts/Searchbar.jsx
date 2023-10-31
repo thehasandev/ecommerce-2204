@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Section from '../Section'
 import Container from '../Container'
@@ -25,7 +25,8 @@ import { upDown } from '../../slices/openDownSlice'
 
 function Searchbar() {
   const openCart= useSelector((state)=>state.trueFalse.openitem)
- 
+  const [account,setAccount]=useState(false)
+  const [menu,setMenu]=useState(false)
 
   const [totall,setTotall] =useState("")
 
@@ -33,23 +34,18 @@ function Searchbar() {
 
   const cartData = useSelector((state)=>state.cart.cartItem)
   
-  
+
 
   
   const handleNameClick =(name)=>{
     dispatch(bradcrumb(name))
   }
-
   const handleIncrement =(item)=>{
     dispatch(increment(item))
   }
-
   const handleDecrement =(item)=>{
     dispatch(decrement(item))
   }
-
-
-
   const handleRemove =(item)=>{
     dispatch(removeCart(item))
   }
@@ -69,6 +65,34 @@ function Searchbar() {
     dispatch(upDown(down))
  }
 
+ const accountRef = useRef(null)
+ const menutRef = useRef(null)
+
+ useEffect(()=>{
+  let handler =(e)=>{
+    if(!accountRef.current.contains(e.target)){
+      setAccount(false)
+    }
+  }
+  
+  document.addEventListener("mousedown",handler)
+  return () =>{
+    document.removeEventListener("mousedown",handler)
+  }
+ })
+ 
+ useEffect(()=>{
+  let handler =(e)=>{
+   if(!menutRef.current.contains(e.target)){
+     setMenu(false)
+    }
+  }
+  document.addEventListener("mousedown",handler)
+  return ()=>{
+    document.removeEventListener("mousedown",handler)
+  }
+ })
+
   
 
   return (
@@ -76,8 +100,25 @@ function Searchbar() {
     <Section className="bg-ash py-6 ">
         <Container>
             <Flex className="justify-between items-center">
-                <Flex className='w-1/5 gap-x-2.5 items-center'>
-                    <DropMenu/>
+                <Flex className='w-1/5 gap-x-2.5 items-center relative'>
+                  <div ref={menutRef}>
+                      <div onClick={()=>{setMenu(!menu)}} className='cursor-pointer'>
+                        <DropMenu/>
+                      </div>
+                      {
+                        menu &&
+                        <ul className='w-[250px] bg-primary absolute top-8 left-0 z-10'>
+                          <li className='px-8 pb-3 pt-5 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Accesories</li>
+                          <li className='px-8 py-3 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Furniture</li>
+                          <li className='px-8 py-3 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Electronics</li>
+                          <li className='px-8 py-3 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Clothes</li>
+                          <li className='px-8 py-3 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Bags</li>
+                          <li className='px-8 pt-3 pb-5 font-dm font-normal text-offwhite/40 hover:text-white duration-200 cursor-pointer border-b border-solid border-offwhite/20 '>Home appliances</li>
+                        </ul>
+
+                      }
+
+                  </div>
                     <p className='font-dm font-normal text-sm text-primary'>Shop by Category</p>
                 </Flex>
                 <div className='w-3/5'>
@@ -89,12 +130,16 @@ function Searchbar() {
                       <Link to="/sing-up" onClick={()=>{handleNameClick("Sing up")}}>
                          <BiSolidUser/>
                       </Link>
-                    
-                    <AiFillCaretDown/>
-                     <div className='absolute top-7 left-[-180px] z-10 w-96'>
-                       <button className='px-16 py-4 bg-primary font-dm font-bold text-sm text-white w-[220px] mb-2'>My Account</button>
-                       <button className='px-16 py-4 bg-trnasparent font-dm font-bold text-sm text-primary hover:bg-primary duration-300 hover:text-white w-[220px]'>Log Out</button>
-                    </div> 
+                    <div ref={accountRef}>
+                        <AiFillCaretDown className='cursor-pointer' onClick={()=>{setAccount(!account)}}/>
+                        {
+                        account &&
+                        <ul className='absolute top-10 left-[-180px] z-10 w-96 '>
+                          <button className='px-16 py-4 bg-primary font-dm font-bold text-sm text-white w-[220px] mb-2'>My Account</button>
+                          <button className='px-16 py-4 bg-trnasparent font-dm font-bold text-sm text-primary hover:bg-primary duration-300 hover:text-white w-[220px]'>Log Out</button>
+                        </ul> 
+                        }
+                    </div>
                 </Flex>
                       
                        
