@@ -70,8 +70,33 @@ function Home() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow:<NextSlide class="absolute top-1/2 -translate-y-full right-5  z-10"/>,
-    prevArrow:<PrevSlide class="absolute top-1/2 -translate-y-full left-5 z-10"/>
+    nextArrow:<NextSlide class="absolute top-1/2 -translate-y-full lg:right-5 right-2  z-10"/>,
+    prevArrow:<PrevSlide class="absolute top-1/2 -translate-y-full lg:left-5 left-2 z-10"/>,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -89,7 +114,7 @@ function Home() {
  
      <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40">
        <Container>
-         <Flex className="justify-between px-4 lg:px-0">
+         <Flex className="justify-between px-4 xl:px-0">
             <Facility src={IconTwo} alt="two" title="Two years warranty"/>
             <Facility src={Car} alt="two" title="Free shipping"/>
             <Facility src={Return} alt="two" title="Return policy in 30 days"/>
@@ -112,9 +137,9 @@ function Home() {
        </Container>
      </Section>
 
-     <Section className="mt-32">
+     <Section className="mt-10 lgmt-32">
        <Container>
-         <SubHeading text="New Arrivals" className="mb-12"/>
+         <SubHeading text="New Arrivals" className="mb-12 px-4 xl:px-0"/>
             <Slider {...settingProduct}>
                 <div className='w-24'>
                   <Product  src={One} alt="One" productName="New Arrival 1" price={44} badge="New"/>
