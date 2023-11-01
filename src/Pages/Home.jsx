@@ -87,7 +87,7 @@ function Home() {
      </Section> 
      
  
-     <Section className="mt-5 lg:mt-2 mb-40">
+     <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40">
        <Container>
          <Flex className="justify-between px-4 lg:px-0">
             <Facility src={IconTwo} alt="two" title="Two years warranty"/>
@@ -99,12 +99,12 @@ function Home() {
 
      <Section>
        <Container>
-         <Flex className="justify-between"> 
-           <div className='w-49'>
+         <Flex className="lg:justify-between justify-center items-center flex-col lg:flex-row"> 
+           <div className='lg:w-49'>
              <Image src={OfferOne} className="w-full"/>
            </div>
 
-           <div className='w-49'>
+           <div className='lg:w-49 hidden lg:block'>
               <Image src={OfferTwo} className="mb-10 w-full"/>
               <Image src={OfferThree} className=" w-full"/>
            </div>
