@@ -796,7 +796,7 @@ function Pagination({ itemsPerPage }) {
   return (
     <div >
       <Items currentItems={currentItems} />
-        <div className='flex items-end justify-between'>
+        <div className='flex items-end justify-between flex-wrap gap-y-5'>
             <ReactPaginate
                 breakLabel="..."
                 nextLabel=""
@@ -805,8 +805,8 @@ function Pagination({ itemsPerPage }) {
                 pageCount={pageCount}
                 previousLabel=""
                 renderOnZeroPageCount={null}
-                className ="flex gap-x-5 mt-14 cursor-pointer"
-                pageClassName ="bg-primary px-4 text-white py-2"
+                className ="flex gap-x-2 md:gap-x-5 mt-14 cursor-pointer"
+                pageClassName ="bg-primary px-2 md:px-4 text-white py-2"
             />
            <div>
              <p className='font-dm font-normal text-base text-gray'>Products from {itemOffset+1} to {endOffset} of {items.length}</p>
