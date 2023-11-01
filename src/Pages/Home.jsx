@@ -115,9 +115,9 @@ function Home() {
      <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40 ">
        <Container>
          <Flex className="justify-between px-4 xl:px-0">
-            <Facility src={IconTwo} alt="two" title="Two years warranty"/>
-            <Facility src={Car} alt="two" title="Free shipping"/>
-            <Facility src={Return} alt="two" title="Return policy in 30 days"/>
+            <Facility src={IconTwo} size="w-3 lg-w-4" alt="two" title="Two years warranty"/>
+            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Car} alt="two" title="Free shipping"/>
+            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Return} alt="two" title="Return policy in 30 days"/>
          </Flex>
        </Container>
      </Section>
