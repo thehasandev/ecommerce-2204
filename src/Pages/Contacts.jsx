@@ -17,7 +17,7 @@ import Section from '../components/Section'
 function Contacts() {
     let pageName = useSelector((state)=>state.bractcumb.previusName)
   return (
-    <Section className="mt-124">
+    <Section className="mb-10 lg:mt-124 px-4 lg:px-0">
       <Container>
             <SubHeading text="Contacts" className="mb-2"/>
               <Flex className="items-center gap-x-2">
@@ -33,8 +33,8 @@ function Contacts() {
               
               </Flex>
 
-              <SubHeading text="Fill up a Form" className="text-text39 mb-10 mt-32"/>
-              <Flex className="justify-between flex-wrap gap-y-6 ">
+              <SubHeading text="Fill up a Form" className=" text-2xl lg:text-text39 mb-10 mt-8 md:mt-32"/>
+              <Flex className="md:justify-between justify-center flex-wrap gap-y-6 ">
                     <div className='w-4/6'>
                       <Input text="Name" placeholder="Your Name Here" type="text"/>
                     </div>
@@ -45,7 +45,9 @@ function Contacts() {
                       <Input text="Message" placeholder="Your Message Here" type="text"/>
                     </div>
               </Flex>
-              <Button text="Post" className="px-28 mt-10" hover/>
+              <Flex className="justify-center md:justify-start">
+                <Button text="Post" className="md:px-28 mt-10" hover/>
+              </Flex>
               <Image src={Map} className="mt-32"/>
       </Container>
     </Section>
