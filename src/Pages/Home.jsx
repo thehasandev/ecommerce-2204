@@ -105,14 +105,14 @@ function Home() {
    
      <Section >
         <Slider {...settingBanner}>
-          <Image src={Banner}/>
-          <Image src={Banner}/>
-          <Image src={Banner}/>
+          <Image  className="min-h-fit"  src={Banner}/>
+          <Image className="min-h-fit"   src={Banner}/>
+          <Image  className="min-h-fit"  src={Banner}/>
         </Slider>
      </Section> 
      
  
-     <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40">
+     <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40 ">
        <Container>
          <Flex className="justify-between px-4 xl:px-0">
             <Facility src={IconTwo} alt="two" title="Two years warranty"/>
@@ -122,11 +122,11 @@ function Home() {
        </Container>
      </Section>
 
-     <Section>
+     <Section className="hidden lg:block">
        <Container>
          <Flex className="lg:justify-between justify-center items-center flex-col lg:flex-row"> 
            <div className='lg:w-49'>
-             <Image src={OfferOne} className="w-full"/>
+             <Image src={OfferOne} className="lg:w-full"/>
            </div>
 
            <div className='lg:w-49 hidden lg:block'>
