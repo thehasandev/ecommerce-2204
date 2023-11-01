@@ -14,11 +14,11 @@ import {BsInstagram} from "react-icons/bs"
 
 function Footer() {
   return (
-    <footer className='bg-ash py-14 mt-32'>
+    <footer className='bg-ash py-14 mt-10 lg:mt-32 px-2 xl:px-0'>
        <Container>
-           <Flex>
+           <Flex className="flex-wrap gap-x-2 justify-between ">
 
-            <div className='w-2/12'>
+            <div className='md:w-2/12'>
                <PortionHeading text="MENU" className="mb-4"/>
                   <ul className='flex flex-col gap-y-1.5'>
                       <List text="Home"/>
@@ -29,7 +29,7 @@ function Footer() {
                   </ul>
             </div>
 
-            <div className='w-2/12'>
+            <div className='md:w-2/12'>
                <PortionHeading text="SHOP" className="mb-4"/>
                   <ul className='flex flex-col gap-y-1.5'>
                       <List text="Category 1"/>
@@ -40,7 +40,7 @@ function Footer() {
                   </ul>
             </div>
 
-            <div className='w-2/12'>
+            <div className='md:w-2/12'>
                <PortionHeading text="HELP" className="mb-4"/>
                   <ul className='flex flex-col gap-y-1.5'>
                       <List text="Privacy Policy"/>
@@ -51,7 +51,7 @@ function Footer() {
                   </ul>
             </div>
             
-            <div className='w-3/12'>
+            <div className='md:w-3/12 hidden md:block'>
             <PortionHeading text="(052) 611-5711" className="mb-3"/>
             <PortionHeading text="company@domain.com"/>
             <ul>
@@ -59,20 +59,20 @@ function Footer() {
             </ul>
             </div>
 
-            <div className='w-2/12'>
+            <div className='md:w-2/12 hidden md:block'>
                 <Image src={Logo}/>
             </div>
 
            </Flex>
 
-           <Flex className="justify-between pt-16">
+           <Flex className="justify-between pt-16 flex-wrap">
               <Flex className="gap-x-6 text-primary w-2/5">
                   <FaFacebookF/>
                   <BiLogoLinkedin/>
                   <BsInstagram/>
               </Flex>
               <div className='4/5'>
-                <p className='font-dm font-normal text-secondary text-sm'>2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
+                <p className='font-dm font-normal text-secondary text-sm mt-5 lg:mt-0'>2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
               </div>
            </Flex>
        </Container>
