@@ -87,9 +87,9 @@ function Home() {
      </Section> 
      
  
-     <Section className="mt-2 mb-40">
+     <Section className="mt-5 lg:mt-2 mb-40">
        <Container>
-         <Flex className="justify-between">
+         <Flex className="justify-between px-4 lg:px-0">
             <Facility src={IconTwo} alt="two" title="Two years warranty"/>
             <Facility src={Car} alt="two" title="Free shipping"/>
             <Facility src={Return} alt="two" title="Return policy in 30 days"/>
