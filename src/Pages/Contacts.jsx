@@ -20,8 +20,8 @@ function Contacts() {
     <Section className="mb-10 lg:mt-124 px-4 lg:px-0">
       <Container>
             <SubHeading text="Contacts" className="mb-2"/>
-              <Flex className="items-center gap-x-2">
-                <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
+              <Flex className="items-center gap-x-2 pt-4">
+                <p className='font-dm font-normal text-xs  text-secondary first-letter:uppercase flex items-center gap-x-2'>
         
                   <Link to={pageName=="Home" ? "/"  : pageName == "Sing up"? "/sing-up" : `/${pageName}`}>
                     {pageName}
