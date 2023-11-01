@@ -28,6 +28,7 @@ function Searchbar() {
   const openCart= useSelector((state)=>state.trueFalse.openitem)
   const [account,setAccount]=useState(false)
   const [menu,setMenu]=useState(false)
+  const [drop,setDrop]=useState(false)
 
   const [totall,setTotall] =useState("")
 
@@ -35,7 +36,7 @@ function Searchbar() {
 
   const cartData = useSelector((state)=>state.cart.cartItem)
   
-
+  const dropRef = useRef(null)
 
   
   const handleNameClick =(name)=>{
@@ -65,6 +66,8 @@ function Searchbar() {
   const handleOpen =(down)=>{
     dispatch(upDown(down))
  }
+  
+
 
  const accountRef = useRef(null)
  const menutRef = useRef(null)
@@ -88,6 +91,18 @@ function Searchbar() {
      setMenu(false)
     }
   }
+  document.addEventListener("mousedown",handler)
+  return ()=>{
+    document.removeEventListener("mousedown",handler)
+  }
+ })
+
+ useEffect(()=>{
+  let handler =(e)=>{
+    if(!dropRef.current.contains(e.target)){
+      setDrop(false)
+     }
+   }
   document.addEventListener("mousedown",handler)
   return ()=>{
     document.removeEventListener("mousedown",handler)
@@ -150,10 +165,13 @@ function Searchbar() {
                        
                        <div className='relative flex items-center gap-x-8'>
                         <BsCartFill onClick={()=>{handleOpen(true)}} className='cursor-pointer text-sm md:text-lg'/>
-                        <div className='block md:hidden '>
-                          <DropMenu/>
+                        <div className='block md:hidden ' ref={dropRef}>
+                          <div onClick={()=>{setDrop(!drop)}} className='cursor-pointer'>
+                            <DropMenu/>
+                          </div>
                         
-                          
+                          {
+                            drop &&
                           <ul className='bg-primary w-[200px]  absolute top-5 -left-[150px] z-20 '>
                      
                             <Link onClick={()=>{handleNameClick("Home")}} to="/">
@@ -173,6 +191,7 @@ function Searchbar() {
                               </Link>
                               <List drop text="Journal"/>
                           </ul>
+                          }
 
 
 
