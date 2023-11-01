@@ -205,20 +205,20 @@ function Home() {
      <Section className="lg:mt-32 mt-10 px-4 xl:px-0">
         <Container>
           <SubHeading text="Special Offers" className="mb-12"/>
-              <Flex className="justify-between">
-                <div className='w-24'>
+              <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap">
+                <div className='lg:w-24'>
                   <Product  src={Nine} alt="One" productName="Special Offers 1" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Ten} alt="One" productName="Special Offers 2" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Eleven} alt="One" productName="Special Offers 3" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Twilve} alt="One" productName="Special Offers 4" price={44} badge="New"/>
                 </div>
               </Flex>
