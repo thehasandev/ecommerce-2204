@@ -78,7 +78,7 @@ function Home() {
     <>
 
    
-     <Section>
+     <Section >
         <Slider {...settingBanner}>
           <Image src={Banner}/>
           <Image src={Banner}/>

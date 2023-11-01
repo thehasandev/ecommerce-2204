@@ -24,7 +24,7 @@ let handleNameClick = (name)=>{
 
   return (
     <>
-    <nav className='py-8'>
+    <nav className='py-8 hidden lg:block'>
         <Container>
              <Flex>
 
@@ -33,7 +33,8 @@ let handleNameClick = (name)=>{
                  </div>
                  
                  <Flex className='w-4/5 justify-end'>
-                    <ul className='flex gap-x-10'>
+                  <div className='hidden md:block'>
+                    <ul className='flex gap-x-10 '>
                      
                       <Link onClick={()=>{handleNameClick("Home")}} to="/">
                          <List text="Home"/>
@@ -52,6 +53,8 @@ let handleNameClick = (name)=>{
                        </Link>
                         <List text="Journal"/>
                     </ul>
+
+                  </div>
                  </Flex>
              </Flex>
         </Container>
