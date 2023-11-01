@@ -137,7 +137,7 @@ function Home() {
        </Container>
      </Section>
 
-     <Section className="mt-10 lgmt-32">
+     <Section className="mt-10 lg:mt-32">
        <Container>
          <SubHeading text="New Arrivals" className="mb-12 px-4 xl:px-0"/>
             <Slider {...settingProduct}>
@@ -194,15 +194,15 @@ function Home() {
      </Section>
     
 
-    {/* Hasan  */}
+  
 
-    <Section className="mt-32">
+    <Section className="lg:mt-32 mt-10">
       <Container>
         <Image src={Year} alt="Year" className="w-full"/>
       </Container>
     </Section>
 
-     <Section className="mt-32">
+     <Section className="lg:mt-32 mt-10 px-4 xl:px-0">
         <Container>
           <SubHeading text="Special Offers" className="mb-12"/>
               <Flex className="justify-between">
