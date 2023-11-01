@@ -20,7 +20,7 @@ import { bradcrumb } from '../../slices/bratcrumbSlice'
 import  { increment,decrement,removeCart } from '../../slices/cardSlice'
 import { upDown } from '../../slices/openDownSlice'
 import Image from '../Image'
-
+import List from "../List"
 
 
 
@@ -152,6 +152,56 @@ function Searchbar() {
                         <BsCartFill onClick={()=>{handleOpen(true)}} className='cursor-pointer text-sm md:text-lg'/>
                         <div className='block md:hidden '>
                           <DropMenu/>
+                        
+                          
+                          <ul className='bg-primary w-[200px]  absolute top-5 -left-[150px] z-20 '>
+                     
+                            <Link onClick={()=>{handleNameClick("Home")}} to="/">
+                                <List drop text="Home"/>
+                            </Link>
+
+                            <Link onClick={()=>{handleNameClick("Shop")}} to="/shop">
+                                <List drop text="Shop"/>
+                            </Link>
+                            
+                            <Link onClick={()=>{handleNameClick("About")}} to="/about">
+                              <List drop text="About"/>
+                            </Link>
+                          
+                              <Link onClick={()=>{handleNameClick("Contact")}} to="/contact">
+                                <List drop text="Contacts"/>
+                              </Link>
+                              <List drop text="Journal"/>
+                          </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                         <div className='absolute md:top-[-13px] top-[-10px] left-[13px] md:left-[15px]  text-sm md:text-xl font-dm font-bold text-primary '>
                           {cartData.length}
