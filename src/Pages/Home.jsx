@@ -59,7 +59,7 @@ function Home() {
     ),
     
     customPaging: i => (
-      <button className={i==0 ? "text-[red]" : i==1 ? "text-[blue]": "text-[green]"}>
+      <button className={i==0 ? "text-black/80" : i==1 ? "text-black/90": "text-black/100"}>
         0{i + 1 }
       </button>
     ),
@@ -170,23 +170,23 @@ function Home() {
      </Section>
 
 
-     <Section className="mt-32">
+     <Section className="mt-10 lg:mt-32 px-4 xl:px-0">
         <Container>
           <SubHeading text="Best Selling" className="mb-12"/>
-              <Flex className="justify-between">
-                <div className='w-24'>
+              <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap ">
+                <div className='lg:w-24'>
                   <Product  src={Five} alt="One" productName="Best Selling 1" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Six} alt="One" productName="Best Selling 2" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Seven} alt="One" productName="Best Selling 3" price={44} badge="New"/>
                 </div>
 
-                <div className='w-24'>
+                <div className='lg:w-24'>
                   <Product  src={Eight} alt="One" productName="Best Selling 4" price={44} badge="New"/>
                 </div>
               </Flex>
