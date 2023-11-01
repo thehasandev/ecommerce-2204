@@ -17,11 +17,11 @@ function ProductShop() {
   let pageName = useSelector((state)=>state.bractcumb.previusName)
   let [show,setShow] = useState(5)
   return (
-    <Section className="mt-124">
+    <Section className="mt-10 lg:mt-124 px-4 xl:px-0">
       <Container>
-      <h2 className='font-dm font-bold text-text49 text-primary'>Product</h2>
+      <h2 className='font-dm font-bold text-3xl md:text-text49 text-primary'>Product</h2>
 
-      <Flex className="items-center gap-x-2">
+      <Flex className="items-center gap-x-2 mt-4">
 
       <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
           <Link to={pageName=="Home" ? "/" :pageName=="Sing up" ? "/sing-up" : `/${pageName.toLowerCase()}`}>
@@ -36,8 +36,8 @@ function ProductShop() {
         
         <Section>
            <Container>
-              <Flex className="mt-14">
-                 <div className='w-2/12'>
+              <Flex className="mt-14  ">
+                 <div className='md:w-2/12 hidden sm:block'>
                   <PortionHeading text="Shop by Category"/>
                     <ul>
                       <List text="Category 1" side className="mt-10"/>
@@ -87,7 +87,9 @@ function ProductShop() {
                     </ul>
                  </div>
 
-                 <div className='w-10/12'>
+                
+                
+                 <div className='md:w-10/12 w-full'>
                   <div className='flex justify-end mb-14'>
                       <label className='font-dm text-base text-gray mr-5'>Show:</label>
                       <select value={show} onChange={(e)=>{setShow(e.target.value)}} name="w-full" id="">
