@@ -34,10 +34,10 @@ let handleNameClick=(name)=>{
 
 
   return (
-    <Section className="mt-124">
+    <Section className="mt-10 xl:mt-124 px-4 xl:px-0">
        <Container>
-           <SubHeading text="Sing up" className="mb-2"/>
-            <Flex className="items-center gap-x-2">
+           <SubHeading text="Sing up" className="mb-2 "/>
+            <Flex className="items-center gap-x-2 mt-8">
               <p className='font-dm font-normal text-xs text-secondary first-letter:uppercase flex items-center gap-x-2'>
       
                 <Link to={pageName=="Home" ? "/"  : `/${pageName}`}>
@@ -50,17 +50,17 @@ let handleNameClick=(name)=>{
             
             </Flex>
 
-            <p className='font-dm font-normal text-gray w-664 mt-127 mb-57 text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+            <p className='font-dm font-normal text-gray md:w-664 mt-10 xl:mt-127 mb-57 text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
         
           {/* Problem */}
-          <SubHeading text="Your Personal Details" className="text-text39 mb-10 "/>
+          <SubHeading text="Your Personal Details" className="text-2xl md:text-text39 mb-10 "/>
              <Flex className="justify-between flex-wrap gap-y-6 border-b  border-offwhite pb-10">
                   <div className='w-48'>
-                    <Input text="First Name" placeholder="First Name" type="text"/>
+                    <Input text="First Name *" placeholder="First Name" type="text"/>
                   </div>
 
                   <div className='w-48'>
-                    <Input text="Last Name" placeholder="Last Name" type="text"/>
+                    <Input text="Last Name *" placeholder="Last Name" type="text"/>
                   </div>
 
                   <div className='w-48'>
@@ -72,7 +72,7 @@ let handleNameClick=(name)=>{
                   </div>
              </Flex>
              
-             <SubHeading text="New Customer" className="text-text39 mb-10 mt-6"/>
+             <SubHeading text="New Customer" className="text-2xl md:text-text39 mb-10 mt-6"/>
              <Flex className="justify-between flex-wrap gap-y-6  border-b  border-offwhite pb-10">
                   <div className='w-48'>
                     <Input text="Address 1" placeholder="First Name" type="text"/>
@@ -117,7 +117,7 @@ let handleNameClick=(name)=>{
                 
              </Flex>
             
-            <SubHeading text="Your Password" className="text-text39 mb-10 mt-6"/>
+            <SubHeading text="Your Password" className=" text-2xl mdLtext-text39 mb-10 mt-6"/>
              <Flex className="justify-between flex-wrap gap-y-6">
 
                 <div className='w-48'>
@@ -137,15 +137,16 @@ let handleNameClick=(name)=>{
               </label>
             </div>
 
-            <Flex className="mt-6">
-              <div  className='w-1/5'>
+            <Flex className="mt-6 flex-wrap gap-x-4">
+              <div  className='md:w-1/5'>
                 <p className='font-dm font-normal text-sm text-gray'>Subscribe Newsletter</p>
               </div>
-              <div className='w-1/5'>
+              
+              <div className='md:w-1/5'>
 
               
                 <input id="boxTwo"  className="peer/boxTwo hidden " type="checkbox"/>
-                  <label className='pt-0.5 pr-10 font-dm font-normal text-sm text-gray relative pl-10 after:absolute after:h-3 after:w-3 after:top-[4px] after:contents-[""] after:left-0  after:peer-checked/boxTwo:bg-gray before:absolute before:h-5 before:w-5 before:border-solid before:border-gray before:top-0 before:border before:left-[-4px] ' htmlFor="boxTwo">
+                  <label className='pt-0.5 pr-5 md:pr-10 font-dm font-normal text-sm text-gray relative pl-10 after:absolute after:h-3 after:w-3 after:top-[4px] after:contents-[""] after:left-0  after:peer-checked/boxTwo:bg-gray before:absolute before:h-5 before:w-5 before:border-solid before:border-gray before:top-0 before:border before:left-[-4px] ' htmlFor="boxTwo">
                   Yes
                  </label>
           
@@ -161,10 +162,12 @@ let handleNameClick=(name)=>{
               </div>
               
             </Flex>
-           
-           <Link onClick={()=>{handleNameClick("Sing up")}} to="/login">
-              <Button text="Login" className="px-28 mt-10" hover/>
-           </Link>
+           <Flex className="justify-center md:justify-start">
+            <Link onClick={()=>{handleNameClick("Sing up")}} to="/login">
+                <Button text="Login" className="md:px-28  mt-10" hover/>
+            </Link>
+
+           </Flex>
 
 
        </Container>
