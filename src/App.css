@@ -17,5 +17,19 @@
  
 }
 
+@media (min-width: 320px) and (max-width: 575.99px) {
+ 
+    .slick-dots ul li button{ 
+        width: 15px;
+        height: 20px;
+    
+    }
+    .slick-dots ul .slick-active button{ 
+        font-size: 14px;
+        border-color:#262626 ;
+    }
+    
+ 
+}
 
 

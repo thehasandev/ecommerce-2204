@@ -54,7 +54,7 @@ function Home() {
     arrows:false,
     appendDots: dots => (
       <div>
-        <ul className={`absolute top-1/2 left-36 -translate-y-full `}>{dots}</ul>
+        <ul className={`absolute lg:top-1/2 lg:left-36 left-5 top-[100px] -translate-y-full `}>{dots}</ul>
       </div>
     ),
     
