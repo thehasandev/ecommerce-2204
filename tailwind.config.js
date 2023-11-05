@@ -47,6 +47,7 @@ export default {
       },
       maxWidth: {
         'container': '1604px',
+        'container_xl': '1480px',
         '664': '644px',
       },
       spacing: {
