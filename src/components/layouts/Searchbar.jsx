@@ -162,7 +162,9 @@ useEffect(()=>{
                   <ul className='absolute top-10 left-[-100px] md:left-[-180px] z-10 w-96'>
                     <Flex className="flex-col">
                       <button className='md:px-16 md:py-4 bg-primary font-dm font-bold text-sm text-white md:w-[220px] mb-2 px-2 py-2 w-[130px]'>My Account</button>
-                      <button className='md:px-16 md:py-4 bg-trnasparent font-dm font-bold text-sm text-primary hover:bg-primary px-2 py-2 duration-300 w-[130px] hover:text-white md:w-[220px] '>Log Out</button>
+                      <Link to="/login">
+                         <button className='md:px-16 md:py-4 bg-trnasparent font-dm font-bold text-sm text-primary hover:bg-primary px-2 py-2 duration-300 w-[130px] hover:text-white md:w-[220px] '>Log Out</button>
+                      </Link>
                     </Flex>
                   </ul>
                 }
