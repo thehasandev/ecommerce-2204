@@ -16,50 +16,50 @@ import { bradcrumb } from '../../slices/bratcrumbSlice'
 
 
 function Navbar() {
- let dispatch  = useDispatch()
+  let dispatch = useDispatch()
 
-let handleNameClick = (name)=>{
-   dispatch(bradcrumb(name))
-}
+  let handleNameClick = (name) => {
+    dispatch(bradcrumb(name))
+  }
 
   return (
     <>
-    <nav className='py-8 hidden lg:block'>
+      <nav className='py-8 hidden lg:block'>
         <Container>
-             <Flex>
+          <Flex>
 
-                 <div className='w-1/5'>
-                    <Image src={Logo}/>
-                 </div>
-                 
-                 <Flex className='w-4/5 justify-end'>
-                  <div className='hidden md:block'>
-                    <ul className='flex gap-x-10 '>
-                     
-                      <Link onClick={()=>{handleNameClick("Home")}} to="/">
-                         <List text="Home"/>
-                      </Link>
+            <div className='w-1/5'>
+              <Image src={Logo} />
+            </div>
 
-                      <Link onClick={()=>{handleNameClick("Shop")}} to="/shop">
-                         <List text="Shop"/>
-                      </Link>
-                      
-                      <Link onClick={()=>{handleNameClick("About")}} to="/about">
-                        <List text="About"/>
-                      </Link>
-                    
-                       <Link onClick={()=>{handleNameClick("Contact")}} to="/contact">
-                         <List text="Contacts"/>
-                       </Link>
-                        <List text="Journal"/>
-                    </ul>
+            <Flex className='w-4/5 justify-end'>
+              <div className='hidden md:block'>
+                <ul className='flex gap-x-10 '>
 
-                  </div>
-                 </Flex>
-             </Flex>
+                  <Link onClick={() => { handleNameClick("Home") }} to="/">
+                    <List text="Home" />
+                  </Link>
+
+                  <Link onClick={() => { handleNameClick("Shop") }} to="/shop">
+                    <List text="Shop" />
+                  </Link>
+
+                  <Link onClick={() => { handleNameClick("About") }} to="/about">
+                    <List text="About" />
+                  </Link>
+
+                  <Link onClick={() => { handleNameClick("Contact") }} to="/contact">
+                    <List text="Contacts" />
+                  </Link>
+                  <List text="Journal" />
+                </ul>
+
+              </div>
+            </Flex>
+          </Flex>
         </Container>
-    </nav>
-    <Searchbar/>
+      </nav>
+      <Searchbar />
     </>
   )
 }

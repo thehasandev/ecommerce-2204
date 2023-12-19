@@ -34,7 +34,7 @@ import Banner from "../assets/banner.png"
 
 
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 
 import PrevSlide from "../components/PrevSlide"
 import NextSlide from "../components/NextSlide"
@@ -51,16 +51,16 @@ function Home() {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows:false,
+    arrows: false,
     appendDots: dots => (
       <div>
         <ul className={`absolute lg:top-1/2 lg:left-36 left-5 top-[100px] -translate-y-full `}>{dots}</ul>
       </div>
     ),
-    
+
     customPaging: i => (
-      <button className={i==0 ? "text-black/80" : i==1 ? "text-black/90": "text-black/100"}>
-        0{i + 1 }
+      <button className={i == 0 ? "text-black/80" : i == 1 ? "text-black/90" : "text-black/100"}>
+        0{i + 1}
       </button>
     ),
   };
@@ -70,8 +70,8 @@ function Home() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow:<NextSlide class="absolute top-1/2 -translate-y-full lg:right-5 right-2  z-10"/>,
-    prevArrow:<PrevSlide class="absolute top-1/2 -translate-y-full lg:left-5 left-2 z-10"/>,
+    nextArrow: <NextSlide class="absolute top-1/2 -translate-y-full lg:right-5 right-2  z-10" />,
+    prevArrow: <PrevSlide class="absolute top-1/2 -translate-y-full lg:left-5 left-2 z-10" />,
     responsive: [
       {
         breakpoint: 1024,
@@ -102,128 +102,128 @@ function Home() {
   return (
     <>
 
-   
-     <Section >
+
+      <Section >
         <Slider {...settingBanner}>
-          <Image  className="min-h-fit"  src={Banner}/>
-          <Image className="min-h-fit"   src={Banner}/>
-          <Image  className="min-h-fit"  src={Banner}/>
+          <Image className="min-h-fit" src={Banner} />
+          <Image className="min-h-fit" src={Banner} />
+          <Image className="min-h-fit" src={Banner} />
         </Slider>
-     </Section> 
-     
- 
-     <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40 ">
-       <Container>
-         <Flex className="justify-between px-4 xl:px-0">
-            <Facility src={IconTwo} size="w-3 lg-w-4" alt="two" title="Two years warranty"/>
-            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Car} alt="two" title="Free shipping"/>
-            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Return} alt="two" title="Return policy in 30 days"/>
-         </Flex>
-       </Container>
-     </Section>
-
-     <Section className="hidden lg:block">
-       <Container>
-         <Flex className="lg:justify-between justify-center items-center flex-col lg:flex-row"> 
-           <div className='lg:w-49'>
-             <Image src={OfferOne} className="lg:w-full"/>
-           </div>
-
-           <div className='lg:w-49 hidden lg:block'>
-              <Image src={OfferTwo} className="mb-10 w-full"/>
-              <Image src={OfferThree} className=" w-full"/>
-           </div>
-         </Flex>
-       </Container>
-     </Section>
-
-     <Section className="mt-10 lg:mt-32">
-       <Container>
-         <SubHeading text="New Arrivals" className="mb-12 px-4 xl:px-0"/>
-            <Slider {...settingProduct}>
-                <div className='w-24'>
-                  <Product  src={One} alt="One" productName="New Arrival 1" price={44} badge="New"/>
-                </div>
-             
-                <div className='w-24'>
-                  <Product  src={Two} alt="One" productName="New Arrival 2" price={44} badge="New"/>
-                </div>
-             
-                <div className='w-24'>
-                  <Product  src={Three} alt="One" productName="New Arrival 3" price={44} badge="New"/>
-                </div>
-             
-                <div className='w-24'>
-                  <Product  src={Four} alt="One" productName="New Arrival 4" price={44} badge="New"/>
-                </div>
-             
-                <div className='w-24'>
-                  <Product  src={Five} alt="One" productName="New Arrival 5" price={44} badge="New"/>
-                </div>
-             
-                <div className='w-24'>
-                  <Product  src={Six} alt="One" productName="New Arrival 6" price={44} badge="New"/>
-                </div>
-             
-            </Slider>
-       </Container>
-     </Section>
+      </Section>
 
 
-     <Section className="mt-10 lg:mt-32 px-4 xl:px-0">
+      <Section className="mt-5 lg:mt-2 mb-10 lg:mb-40 ">
         <Container>
-          <SubHeading text="Best Selling" className="mb-12"/>
-              <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap ">
-                <div className='lg:w-24'>
-                  <Product  src={Five} alt="One" productName="Best Selling 1" price={44} badge="New"/>
-                </div>
-
-                <div className='lg:w-24'>
-                  <Product  src={Six} alt="One" productName="Best Selling 2" price={44} badge="New"/>
-                </div>
-
-                <div className='lg:w-24'>
-                  <Product  src={Seven} alt="One" productName="Best Selling 3" price={44} badge="New"/>
-                </div>
-
-                <div className='lg:w-24'>
-                  <Product  src={Eight} alt="One" productName="Best Selling 4" price={44} badge="New"/>
-                </div>
-              </Flex>
+          <Flex className="justify-between px-4 xl:px-0">
+            <Facility src={IconTwo} size="w-3 lg-w-4" alt="two" title="Two years warranty" />
+            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Car} alt="two" title="Free shipping" />
+            <Facility className="mt-2 lg:mt-0" size="w-4 lg-w-4" src={Return} alt="two" title="Return policy in 30 days" />
+          </Flex>
         </Container>
-     </Section>
-    
+      </Section>
 
-  
-
-    <Section className="lg:mt-32 mt-10">
-      <Container>
-        <Image src={Year} alt="Year" className="w-full"/>
-      </Container>
-    </Section>
-
-     <Section className="lg:mt-32 mt-10 px-4 xl:px-0">
+      <Section className="hidden lg:block">
         <Container>
-          <SubHeading text="Special Offers" className="mb-12"/>
-              <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap">
-                <div className='lg:w-24'>
-                  <Product  src={Nine} alt="One" productName="Special Offers 1" price={44} badge="New"/>
-                </div>
+          <Flex className="lg:justify-between justify-center items-center flex-col lg:flex-row">
+            <div className='lg:w-49'>
+              <Image src={OfferOne} className="lg:w-full" />
+            </div>
 
-                <div className='lg:w-24'>
-                  <Product  src={Ten} alt="One" productName="Special Offers 2" price={44} badge="New"/>
-                </div>
-
-                <div className='lg:w-24'>
-                  <Product  src={Eleven} alt="One" productName="Special Offers 3" price={44} badge="New"/>
-                </div>
-
-                <div className='lg:w-24'>
-                  <Product  src={Twilve} alt="One" productName="Special Offers 4" price={44} badge="New"/>
-                </div>
-              </Flex>
+            <div className='lg:w-49 hidden lg:block'>
+              <Image src={OfferTwo} className="mb-10 w-full" />
+              <Image src={OfferThree} className=" w-full" />
+            </div>
+          </Flex>
         </Container>
-     </Section>
+      </Section>
+
+      <Section className="mt-10 lg:mt-32">
+        <Container>
+          <SubHeading text="New Arrivals" className="mb-12 px-4 xl:px-0" />
+          <Slider {...settingProduct}>
+            <div className='w-24'>
+              <Product src={One} alt="One" productName="New Arrival 1" price={44} badge="New" />
+            </div>
+
+            <div className='w-24'>
+              <Product src={Two} alt="One" productName="New Arrival 2" price={44} badge="New" />
+            </div>
+
+            <div className='w-24'>
+              <Product src={Three} alt="One" productName="New Arrival 3" price={44} badge="New" />
+            </div>
+
+            <div className='w-24'>
+              <Product src={Four} alt="One" productName="New Arrival 4" price={44} badge="New" />
+            </div>
+
+            <div className='w-24'>
+              <Product src={Five} alt="One" productName="New Arrival 5" price={44} badge="New" />
+            </div>
+
+            <div className='w-24'>
+              <Product src={Six} alt="One" productName="New Arrival 6" price={44} badge="New" />
+            </div>
+
+          </Slider>
+        </Container>
+      </Section>
+
+
+      <Section className="mt-10 lg:mt-32 px-4 xl:px-0">
+        <Container>
+          <SubHeading text="Best Selling" className="mb-12" />
+          <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap ">
+            <div className='lg:w-24'>
+              <Product src={Five} alt="One" productName="Best Selling 1" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Six} alt="One" productName="Best Selling 2" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Seven} alt="One" productName="Best Selling 3" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Eight} alt="One" productName="Best Selling 4" price={44} badge="New" />
+            </div>
+          </Flex>
+        </Container>
+      </Section>
+
+
+
+
+      <Section className="lg:mt-32 mt-10">
+        <Container>
+          <Image src={Year} alt="Year" className="w-full" />
+        </Container>
+      </Section>
+
+      <Section className="lg:mt-32 mt-10 px-4 xl:px-0">
+        <Container>
+          <SubHeading text="Special Offers" className="mb-12" />
+          <Flex className="lg:justify-between justify-center gap-y-5 flex-wrap">
+            <div className='lg:w-24'>
+              <Product src={Nine} alt="One" productName="Special Offers 1" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Ten} alt="One" productName="Special Offers 2" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Eleven} alt="One" productName="Special Offers 3" price={44} badge="New" />
+            </div>
+
+            <div className='lg:w-24'>
+              <Product src={Twilve} alt="One" productName="Special Offers 4" price={44} badge="New" />
+            </div>
+          </Flex>
+        </Container>
+      </Section>
     </>
   )
 }

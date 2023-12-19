@@ -3,7 +3,7 @@ import React from 'react'
 import {
   createRoutesFromElements,
   createBrowserRouter,
-  Route,RouterProvider
+  Route, RouterProvider
 } from "react-router-dom";
 
 import Home from "./Pages/Home"
@@ -23,17 +23,17 @@ import "./App.css"
 const router = createBrowserRouter(
   createRoutesFromElements(
 
-    <Route path='/' element={<RouteLayouts/>}>
-      <Route path='/' element = {<Home/>}/>
-      <Route path='/product-details' element = {<ProductDetails/>}/>
-      <Route path='/login' element = {<Login/>}/>
-      <Route path='/sing-up' element = {<Singup/>}/>
-      <Route path='/shop' element = {<ProductShop/>}/> 
-      <Route path='/checkout' element = {<Checkout/>}/> 
-      <Route path='/contact' element = {<Contacts/>}/> 
-      <Route path='/about' element = {<About/>}/> 
-      <Route path='/card' element = {<Card/>}/> 
-      <Route path='*' element = {<Error/>}/>
+    <Route path='/' element={<RouteLayouts />}>
+      <Route path='/' element={<Home />} />
+      <Route path='/product-details' element={<ProductDetails />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/sing-up' element={<Singup />} />
+      <Route path='/shop' element={<ProductShop />} />
+      <Route path='/checkout' element={<Checkout />} />
+      <Route path='/contact' element={<Contacts />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/card' element={<Card />} />
+      <Route path='*' element={<Error />} />
     </Route>
   )
 );
