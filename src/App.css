@@ -1,35 +1,35 @@
-.slick-dots ul li{
+.slick-dots ul li {
     margin-top: -5px;
 }
-.slick-dots ul li button{ 
+
+.slick-dots ul li button {
     width: 30px;
     height: 50px;
-    font-size:0px;
+    font-size: 0px;
     border-right: 5px solid white;
-    padding-right:20px;
+    padding-right: 20px;
     font-weight: bold;
     font-family: dm;
 }
 
-.slick-dots ul .slick-active button{ 
+.slick-dots ul .slick-active button {
     font-size: 20px;
-    border-color:#262626 ;
- 
+    border-color: #262626;
+
 }
 
 @media (min-width: 320px) and (max-width: 575.99px) {
- 
-    .slick-dots ul li button{ 
+
+    .slick-dots ul li button {
         width: 15px;
         height: 20px;
-    
+
     }
-    .slick-dots ul .slick-active button{ 
+
+    .slick-dots ul .slick-active button {
         font-size: 14px;
-        border-color:#262626 ;
+        border-color: #262626;
     }
-    
- 
+
+
 }
-
-

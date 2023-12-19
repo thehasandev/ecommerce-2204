@@ -202,6 +202,7 @@ function Home() {
         </Container>
       </Section>
 
+{/* Products  */}
       <Section className="lg:mt-32 mt-10 px-4 xl:px-0">
         <Container>
           <SubHeading text="Special Offers" className="mb-12" />
